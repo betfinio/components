@@ -1,6 +1,6 @@
 {
 	"name": "@betfinio/components",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"type": "module",
 	"exports": {
 		".": {
@@ -10,7 +10,9 @@
 	},
 	"module": "./dist/index.js",
 	"types": "./dist/index.d.ts",
-	"files": ["dist"],
+	"files": [
+		"dist"
+	],
 	"scripts": {
 		"build": "rslib build",
 		"check": "biome check --write",
@@ -56,12 +58,13 @@
 	"repository": {
 		"url": "https://github.com/betfinio/components.git"
 	},
-
 	"publishConfig": {
 		"registry": "https://npm.pkg.github.com/@betfinio"
 	},
 	"release": {
-		"branches": ["master"],
+		"branches": [
+			"master"
+		],
 		"repositoryUrl": "https://github.com/betfinio/components.git",
 		"plugins": [
 			"@semantic-release/commit-analyzer",

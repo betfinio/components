@@ -12,20 +12,16 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - name: Setup Bun
-        uses: oven-sh/setup-bun@v2
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          registry-url: "https://npm.pkg.github.com"
-          scope: '@betfinio'
-          bun-version: latest
+          node-version: "lts/*"
       - name: Install dependencies
-        run: bun i
+        run: yarn
       - name: Build package
-        run: bun run build
+        run: yarn build
       - name: Release
-        uses: changesets/action@v1
-        with:
-          publish: bun run changeset version && bun run changeset publish
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: yarn semantic-release

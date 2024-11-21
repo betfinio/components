@@ -24,12 +24,16 @@
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^1.9.4",
-		"@changesets/cli": "^2.27.10",
-		"@commitlint/cli": "^19.5.0",
-		"@commitlint/config-conventional": "^19.5.0",
+		"@commitlint/cli": "^19.6.0",
+		"@commitlint/config-conventional": "^19.6.0",
 		"@rsbuild/core": "^1.1.4",
 		"@rsbuild/plugin-react": "^1.0.7",
 		"@rslib/core": "^0.1.0",
+		"@semantic-release/commit-analyzer": "^13.0.0",
+		"@semantic-release/git": "^10.0.1",
+		"@semantic-release/github": "^10.3.5",
+		"@semantic-release/npm": "^12.0.1",
+		"@semantic-release/release-notes-generator": "^14.0.1",
 		"@storybook/addon-essentials": "^8.4.5",
 		"@storybook/addon-interactions": "^8.4.5",
 		"@storybook/addon-links": "^8.4.5",
@@ -44,6 +48,7 @@
 		"lefthook": "^1.8.4",
 		"lucide-react": "^0.460.0",
 		"react": "^18.3.1",
+		"semantic-release": "^24.2.0",
 		"storybook": "^8.4.5",
 		"storybook-addon-rslib": "^0.1.5",
 		"storybook-react-rsbuild": "^0.1.5",
@@ -51,6 +56,22 @@
 		"tailwindcss": "^3.4.15",
 		"tailwindcss-animate": "^1.0.7",
 		"typescript": "^5.6.3"
+	},
+	"release": {
+		"branches": ["master"],
+		"repositoryUrl": "https://github.com/betfinio/components.git",
+		"plugins": [
+			"@semantic-release/commit-analyzer",
+			"@semantic-release/release-notes-generator",
+			"@semantic-release/npm",
+			[
+				"@semantic-release/git",
+				{
+					"message": "chore(release): ${nextRelease.version} \n\n${nextRelease.notes}"
+				}
+			],
+			"@semantic-release/github"
+		]
 	},
 	"peerDependencies": {
 		"react": ">=16.9.0",

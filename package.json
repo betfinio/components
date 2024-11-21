@@ -10,9 +10,7 @@
 	},
 	"module": "./dist/index.js",
 	"types": "./dist/index.d.ts",
-	"files": [
-		"dist"
-	],
+	"files": ["dist"],
 	"scripts": {
 		"build": "rslib build",
 		"check": "biome check --write",
@@ -62,9 +60,7 @@
 		"registry": "https://npm.pkg.github.com/@betfinio"
 	},
 	"release": {
-		"branches": [
-			"master"
-		],
+		"branches": ["master"],
 		"repositoryUrl": "https://github.com/betfinio/components.git",
 		"plugins": [
 			"@semantic-release/commit-analyzer",
@@ -83,7 +79,6 @@
 		"react": ">=16.9.0",
 		"react-dom": ">=16.9.0"
 	},
-	"private": true,
 	"dependencies": {
 		"@radix-ui/react-slot": "^1.1.0"
 	}

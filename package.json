@@ -1,6 +1,6 @@
 {
 	"name": "@betfinio/components",
-	"version": "1.0.1",
+	"version": "1.0.0",
 	"type": "module",
 	"exports": {
 		".": {
@@ -10,7 +10,9 @@
 	},
 	"module": "./dist/index.js",
 	"types": "./dist/index.d.ts",
-	"files": ["dist"],
+	"files": [
+		"dist"
+	],
 	"scripts": {
 		"build": "rslib build",
 		"build:storybook": "storybook build",
@@ -58,7 +60,9 @@
 		"typescript": "^5.6.3"
 	},
 	"release": {
-		"branches": ["master"],
+		"branches": [
+			"master"
+		],
 		"repositoryUrl": "https://github.com/betfinio/components.git",
 		"plugins": [
 			"@semantic-release/commit-analyzer",

@@ -16,10 +16,16 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "lts/*"
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          registry-url: "https://npm.pkg.github.com"
+          scope: '@betfinio'
+          bun-version: latest
       - name: Install dependencies
-        run: yarn
+        run: bun i
       - name: Build package
-        run: yarn build
+        run: bun run build
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

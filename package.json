@@ -10,9 +10,7 @@
 	},
 	"module": "./dist/index.js",
 	"types": "./dist/index.d.ts",
-	"files": [
-		"dist"
-	],
+	"files": ["dist"],
 	"scripts": {
 		"build": "rslib build",
 		"check": "biome check --write",
@@ -60,24 +58,6 @@
 	},
 	"publishConfig": {
 		"registry": "https://npm.pkg.github.com"
-	},
-	"release": {
-		"branches": [
-			"master"
-		],
-		"repositoryUrl": "https://github.com/betfinio/components.git",
-		"plugins": [
-			"@semantic-release/commit-analyzer",
-			"@semantic-release/release-notes-generator",
-			"@semantic-release/npm",
-			[
-				"@semantic-release/git",
-				{
-					"message": "chore(release): ${nextRelease.version} \n\n${nextRelease.notes}"
-				}
-			],
-			"@semantic-release/github"
-		]
 	},
 	"peerDependencies": {
 		"react": ">=16.9.0",

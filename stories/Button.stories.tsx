@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
 import * as React from 'react';
-import { Button } from '../src';
+import { Button } from '../src/components/ui';
 
 import { PlayIcon } from 'lucide-react';
 

@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
 	darkMode: ['class'],
-	content: ['./src/**/*.{ts,tsx}'],
+	content: ['./src/**/*.{ts,tsx}', './stories/**/*.{ts,tsx}'],
 	theme: {
 		container: {
 			center: 'true',
@@ -15,7 +15,11 @@ module.exports = {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
-				background: 'var(--background)',
+				background: {
+					DEFAULT: 'var(--background)',
+					light: 'var(--background-light)',
+					lighter: 'var(--background-lighter)',
+				},
 				foreground: 'var(--foreground)',
 				primary: {
 					DEFAULT: 'var(--primary)',

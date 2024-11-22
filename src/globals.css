@@ -7,6 +7,8 @@
 @layer base {
 	:root {
 		--background: hsl(227.14 31.82% 8.63%);
+		--background-light: #131624;
+		--background-lighter: #151a2a;
 		--foreground: hsl(220 13% 91%);
 		--card: hsl(226 33% 12%);
 		--card-foreground: 20 14.3% 4.1%;

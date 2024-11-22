@@ -6,13 +6,19 @@
 		".": {
 			"types": "./dist/src/index.d.ts",
 			"import": "./dist/index.js"
+		},
+		"./shared": {
+			"types": "./dist/src/components/shared/index.d.ts",
+			"import": "./dist/components/shared/index.js"
+		},
+		"./ui": {
+			"types": "./dist/src/components/ui/index.d.ts",
+			"import": "./dist/components/ui/index.js"
 		}
 	},
 	"module": "./dist/index.js",
 	"types": "./dist/src/index.d.ts",
-	"files": [
-		"dist"
-	],
+	"files": ["dist"],
 	"scripts": {
 		"build": "rslib build",
 		"check": "biome check --write",
@@ -67,6 +73,8 @@
 		"class-variance-authority": "^0.7.0"
 	},
 	"dependencies": {
+		"@betfinio/abi": "^1.1.2",
+		"@betfinio/ui": "^1.0.11",
 		"@radix-ui/react-accordion": "^1.2.1",
 		"@radix-ui/react-checkbox": "^1.1.2",
 		"@radix-ui/react-dialog": "^1.1.2",

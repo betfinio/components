@@ -1,9 +1,12 @@
-import { Button, buttonVariants } from '@/components/ui/button';
 import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
 import * as React from 'react';
+import { Button } from '../src';
 
 import { PlayIcon } from 'lucide-react';
+
+const variants = ['Default', 'Destructive', 'Outline', 'Ghost', 'Link', 'Secondary', 'Tertiary'];
+const sizes = ['lg', 'sm', 'icon', 'freeSize', 'default'];
 
 const meta = {
 	title: 'Button',
@@ -13,7 +16,14 @@ const meta = {
 	},
 	tags: ['autodocs'],
 	argTypes: {
-		...buttonVariants,
+		variant: {
+			options: variants.map((e) => e.toLowerCase()),
+			control: { type: 'select' },
+		},
+		size: {
+			options: sizes,
+			control: { type: 'select' },
+		},
 	},
 	args: { onClick: fn(), children: 'Button' },
 } satisfies Meta<typeof Button>;

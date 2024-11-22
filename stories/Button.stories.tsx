@@ -1,4 +1,4 @@
-import { Button, buttonVariants } from '@/src/components/ui/button';
+import { Button, buttonVariants } from '@/components/ui/button';
 import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
 import * as React from 'react';

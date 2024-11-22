@@ -6,6 +6,9 @@ export default defineConfig({
 		entry: {
 			index: ['./src/**'],
 		},
+		alias: {
+			'@/*': './src/*',
+		},
 	},
 	lib: [
 		{

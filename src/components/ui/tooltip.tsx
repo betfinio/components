@@ -3,9 +3,9 @@ import * as TooltipPrimitive from '@radix-ui/react-tooltip';
 import * as React from 'react';
 import { useMediaQuery } from 'react-responsive';
 
-import { Popover, PopoverContent, PopoverTrigger } from '@/src/components/ui/popover.tsx';
-import { cn } from '@/src/lib/utils.ts';
 import type { PopoverContentProps, PopoverProps, PopoverTriggerProps } from '@radix-ui/react-popover';
+import { cn } from '../../lib/utils';
+import { Popover, PopoverContent, PopoverTrigger } from './popover';
 
 const TooltipProvider = TooltipPrimitive.Provider;
 

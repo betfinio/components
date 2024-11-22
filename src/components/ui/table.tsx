@@ -3,11 +3,11 @@ import * as React from 'react';
 
 import { Button } from './button.tsx';
 
-import { cn } from '@/src/lib/utils';
 import cx from 'clsx';
 import { motion } from 'framer-motion';
 import { ChevronLeft, ChevronRight, ChevronsLeft, ChevronsRight } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { cn } from '../../lib/utils';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './select';
 
 const Table = React.forwardRef<HTMLTableElement, React.HTMLAttributes<HTMLTableElement>>(({ className, ...props }, ref) => (

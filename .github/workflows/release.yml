@@ -24,6 +24,8 @@ jobs:
           scope: '@betfinio'
           bun-version: latest
       - name: Install dependencies
+        with:
+          BUN_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: bun i
       - name: Build package
         run: bun run build

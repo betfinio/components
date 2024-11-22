@@ -1,2 +1,2 @@
-export * from './components/ui';
+export * from './components/index';
 export * from './lib/utils';

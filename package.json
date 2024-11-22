@@ -10,9 +10,7 @@
 	},
 	"module": "./dist/index.js",
 	"types": "./dist/index.d.ts",
-	"files": [
-		"dist"
-	],
+	"files": ["dist"],
 	"scripts": {
 		"build": "rslib build",
 		"check": "biome check --write",
@@ -24,6 +22,7 @@
 		"@biomejs/biome": "^1.9.4",
 		"@commitlint/cli": "^19.6.0",
 		"@commitlint/config-conventional": "^19.6.0",
+		"@radix-ui/react-popover": "^1.1.2",
 		"@rsbuild/core": "^1.1.4",
 		"@rsbuild/plugin-react": "^1.0.7",
 		"@rslib/core": "^0.1.0",
@@ -41,11 +40,11 @@
 		"@storybook/react": "^8.4.5",
 		"@storybook/test": "^8.4.5",
 		"@types/react": "^18.3.12",
-		"class-variance-authority": "^0.7.0",
 		"clsx": "^2.1.1",
 		"lefthook": "^1.8.4",
 		"lucide-react": "^0.460.0",
 		"react": "^18.3.1",
+		"react-responsive": "^10.0.0",
 		"semantic-release": "^24.2.0",
 		"storybook": "^8.4.5",
 		"storybook-addon-rslib": "^0.1.5",
@@ -63,9 +62,13 @@
 	},
 	"peerDependencies": {
 		"react": ">=16.9.0",
-		"react-dom": ">=16.9.0"
+		"react-dom": ">=16.9.0",
+		"class-variance-authority": "^0.7.0"
 	},
 	"dependencies": {
-		"@radix-ui/react-slot": "^1.1.0"
+		"@radix-ui/react-dialog": "^1.1.2",
+		"@radix-ui/react-separator": "^1.1.0",
+		"@radix-ui/react-slot": "^1.1.0",
+		"@radix-ui/react-tooltip": "^1.1.4"
 	}
 }

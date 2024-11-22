@@ -6,8 +6,8 @@
 
 @layer base {
 	:root {
-		--background: 227.14 31.82% 8.63%;
-		--foreground: 220 13% 91%;
+		--background: hsl(227.14 31.82% 8.63%);
+		--foreground: hsl(220 13% 91%);
 		--card: hsl(226 33% 12%);
 		--card-foreground: 20 14.3% 4.1%;
 		--card-secondary: 240 29% 28%;
@@ -15,7 +15,7 @@
 		--popover: 227.14 31.82% 8.63%;
 		--popover-foreground: 220 13% 91%;
 		--primary: hsl(47.9 95.8% 53.1%);
-		--primary-foreground: 26 83.3% 14.1%;
+		--primary-foreground: hsl(0, 0%, 0%);
 		--secondary: 247 39% 18%;
 		--secondary-foreground: 0 0% 100%;
 		--tertiary: 60 4.8% 95.9%;
@@ -108,4 +108,12 @@
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
 	background: #555;
+}
+@layer base {
+	* {
+		@apply border-border;
+	}
+	body {
+		@apply bg-background text-foreground;
+	}
 }

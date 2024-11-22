@@ -4,7 +4,7 @@ module.exports = {
 	content: ['./src/**/*.{ts,tsx}'],
 	theme: {
 		container: {
-			center: true,
+			center: 'true',
 			padding: '2rem',
 			screens: {
 				'2xl': '1400px',
@@ -15,33 +15,22 @@ module.exports = {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
-				background: 'hsl(var(--background))',
-				foreground: 'hsl(var(--foreground))',
+				background: 'var(--background)',
+				foreground: 'var(--foreground)',
 				primary: {
-					DEFAULT: '#0F121D',
-					light: '#131624',
-					lighter: '#151A2A',
-					foreground: '#fff',
+					DEFAULT: 'var(--primary)',
+					foreground: 'var(--primary-foreground)',
 				},
-
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',
-					light: '#292546',
-					lighter: '#201C4080',
 					foreground: 'hsl(var(--secondary-foreground))',
 				},
-
 				purple: {
 					box: '#6A6A9F',
 					table: '#201C40',
 				},
 				red: {
-					600: '#B80042',
 					roulette: 'hsl(var(--red-roulette))',
-				},
-				gray: {
-					800: 'hsl(var(--border))',
-					300: '#201C40',
 				},
 				green: {
 					roulette: 'hsl(var(--green-roulette))',
@@ -94,25 +83,22 @@ module.exports = {
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)',
 			},
-			backgroundImage: {
-				'game-roulette': "url('./assets/games/roulette.png')",
-				'game-poker': "url('./assets/games/poker.png')",
-				'game-predict': "url('./assets/games/predict.png')",
-				'game-luro': "url('./assets/games/luro.png')",
-				'game-stones': "url('./assets/games/stones.png')",
-				'game-gem-roulette': "url('./assets/games/gem-roulette.png')",
-				'game-slots': "url('./assets/games/slots.png')",
-				'game-blackjack': "url('./assets/games/blackjack.png')",
-				'primary-gradient': 'linear-gradient(to left, #1D1A3D, #7366FF 40%, #1D1A3D)',
-			},
 			keyframes: {
 				'accordion-down': {
-					from: { height: '0' },
-					to: { height: 'var(--radix-accordion-content-height)' },
+					from: {
+						height: '0',
+					},
+					to: {
+						height: 'var(--radix-accordion-content-height)',
+					},
 				},
 				'accordion-up': {
-					from: { height: 'var(--radix-accordion-content-height)' },
-					to: { height: '0' },
+					from: {
+						height: 'var(--radix-accordion-content-height)',
+					},
+					to: {
+						height: '0',
+					},
 				},
 			},
 			fontFamily: {

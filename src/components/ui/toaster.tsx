@@ -1,7 +1,7 @@
 import { CircleAlert, CircleCheck, Loader } from 'lucide-react';
 import * as React from 'react';
+import { useToast } from '../../hooks/use-toast.ts';
 import { Toast, ToastClose, ToastDescription, ToastProvider, ToastTitle, ToastViewport } from './toast';
-import { useToast } from './use-toast';
 
 export function Toaster() {
 	const { toasts } = useToast();

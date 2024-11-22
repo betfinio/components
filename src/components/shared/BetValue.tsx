@@ -28,16 +28,17 @@ export const BetValue: FC<BetValueProps> = ({
 	className,
 }) => {
 	const amount: number = typeof value === 'bigint' ? valueToNumber(value) : value;
+	const number = millify(amount, { precision });
 	return (
 		<TooltipProvider delayDuration={300}>
 			<Tooltip>
 				<TooltipTrigger asChild>
 					<div className={cn(className, 'flex flex-row items-center cursor-pointer justify-start w-fit gap-1')}>
-						{millify(amount, { precision: precision })}
+						{number}
 						{withIcon && <Bet className={cn('w-4 h-4 stroke-0 text-primary', iconClassName)} />}
 					</div>
 				</TooltipTrigger>
-				<TooltipContent side={place} className={'bg-background-lighter text-white border-gray-800'}>
+				<TooltipContent side={place} className={'bg-background-lighter text-white'}>
 					{prefix} {amount.toFixed(2)} {postfix}
 				</TooltipContent>
 			</Tooltip>

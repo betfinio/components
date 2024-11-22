@@ -1,5 +1,5 @@
 {
-	"$schema": "https://biomejs.dev/schemas/1.8.0/schema.json",
+	"$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
 	"organizeImports": {
 		"enabled": true
 	},
@@ -30,7 +30,9 @@
 				"noExplicitAny": "off"
 			},
 			"a11y": {
-				"useKeyWithClickEvents": "off"
+				"useKeyWithClickEvents": "off",
+				"useFocusableInteractive": "off",
+				"useSemanticElements": "off"
 			},
 			"correctness": {
 				"useExhaustiveDependencies": "off"

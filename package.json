@@ -1,15 +1,31 @@
 {
 	"name": "@betfinio/components",
-	"version": "1.1.1",
+	"version": "1.2.0-dev.10",
 	"type": "module",
 	"exports": {
 		".": {
-			"types": "./dist/index.d.ts",
+			"types": "./dist/src/index.d.ts",
 			"import": "./dist/index.js"
+		},
+		"./shared": {
+			"types": "./dist/src/components/shared/index.d.ts",
+			"import": "./dist/components/shared/index.js"
+		},
+		"./ui": {
+			"types": "./dist/src/components/ui/index.d.ts",
+			"import": "./dist/components/ui/index.js"
+		},
+		"./hooks": {
+			"types": "./dist/src/hooks/index.d.ts",
+			"import": "./dist/hooks/index.js"
+		},
+		"./lib": {
+			"types": "./dist/src/lib/index.d.ts",
+			"import": "./dist/lib/index.js"
 		}
 	},
 	"module": "./dist/index.js",
-	"types": "./dist/index.d.ts",
+	"types": "./dist/src/index.d.ts",
 	"files": [
 		"dist"
 	],
@@ -41,11 +57,11 @@
 		"@storybook/react": "^8.4.5",
 		"@storybook/test": "^8.4.5",
 		"@types/react": "^18.3.12",
-		"class-variance-authority": "^0.7.0",
 		"clsx": "^2.1.1",
 		"lefthook": "^1.8.4",
 		"lucide-react": "^0.460.0",
 		"react": "^18.3.1",
+		"react-responsive": "^10.0.0",
 		"semantic-release": "^24.2.0",
 		"storybook": "^8.4.5",
 		"storybook-addon-rslib": "^0.1.5",
@@ -62,10 +78,37 @@
 		"registry": "https://npm.pkg.github.com"
 	},
 	"peerDependencies": {
-		"react": ">=16.9.0",
-		"react-dom": ">=16.9.0"
+		"react": "^18.3.1",
+		"react-dom": "^18.3.1",
+		"class-variance-authority": "^0.7.0",
+		"millify": "^6.1.0"
 	},
 	"dependencies": {
-		"@radix-ui/react-slot": "^1.1.0"
+		"@betfinio/abi": "^1.1.2",
+		"@betfinio/ui": "^1.0.11",
+		"@radix-ui/react-accordion": "^1.2.1",
+		"@radix-ui/react-checkbox": "^1.1.2",
+		"@radix-ui/react-dialog": "^1.1.2",
+		"@radix-ui/react-dropdown-menu": "^2.1.2",
+		"@radix-ui/react-popover": "^1.1.2",
+		"@radix-ui/react-progress": "^1.1.0",
+		"@radix-ui/react-radio-group": "^1.2.1",
+		"@radix-ui/react-scroll-area": "^1.2.1",
+		"@radix-ui/react-select": "^2.1.2",
+		"@radix-ui/react-separator": "^1.1.0",
+		"@radix-ui/react-slider": "^1.2.1",
+		"@radix-ui/react-slot": "^1.1.0",
+		"@radix-ui/react-tabs": "^1.1.1",
+		"@radix-ui/react-toast": "^1.2.2",
+		"@radix-ui/react-toggle": "^1.1.0",
+		"@radix-ui/react-toggle-group": "^1.1.0",
+		"@radix-ui/react-tooltip": "^1.1.4",
+		"@tanstack/react-table": "^8.20.5",
+		"cmdk": "^1.0.4",
+		"embla-carousel-react": "^8.5.1",
+		"framer-motion": "^11.11.17",
+		"millify": "^6.1.0",
+		"react-i18next": "^15.1.1",
+		"vaul": "^1.1.1"
 	}
 }

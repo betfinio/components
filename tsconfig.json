@@ -7,11 +7,16 @@
 		"strict": true,
 		"declaration": true,
 		"skipLibCheck": true,
+		"rootDir": ".",
 		"allowImportingTsExtensions": true,
 		"isolatedModules": true,
 		"resolveJsonModule": true,
 		"moduleResolution": "bundler",
-		"useDefineForClassFields": true
+		"useDefineForClassFields": true,
+		"baseUrl": ".",
+		"paths": {
+			"@/src/*": ["./src/*"]
+		}
 	},
 	"include": ["src"]
 }

@@ -22,9 +22,7 @@
 	},
 	"module": "./dist/index.js",
 	"types": "./dist/src/index.d.ts",
-	"files": [
-		"dist"
-	],
+	"files": ["dist"],
 	"scripts": {
 		"build": "rslib build",
 		"check": "biome check --write",
@@ -74,9 +72,10 @@
 		"registry": "https://npm.pkg.github.com"
 	},
 	"peerDependencies": {
-		"react": ">=16.9.0",
-		"react-dom": ">=16.9.0",
-		"class-variance-authority": "^0.7.0"
+		"react": "^18.3.1",
+		"react-dom": "^18.3.1",
+		"class-variance-authority": "^0.7.0",
+		"millify": "^6.1.0"
 	},
 	"dependencies": {
 		"@betfinio/abi": "^1.1.2",

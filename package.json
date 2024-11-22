@@ -83,6 +83,7 @@
 		"@radix-ui/react-tooltip": "^1.1.4",
 		"@tanstack/react-table": "^8.20.5",
 		"cmdk": "^1.0.4",
+		"embla-carousel-react": "^8.5.1",
 		"framer-motion": "^11.11.17",
 		"react-i18next": "^15.1.1",
 		"vaul": "^1.1.1"

@@ -10,6 +10,9 @@ export default defineConfig({
 			'@/*': './src/*',
 		},
 	},
+	performance: {
+		buildCache: false,
+	},
 	lib: [
 		{
 			bundle: false,

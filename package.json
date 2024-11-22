@@ -18,6 +18,10 @@
 		"./hooks": {
 			"types": "./dist/src/hooks/index.d.ts",
 			"import": "./dist/hooks/index.js"
+		},
+		"./lib": {
+			"types": "./dist/src/lib/index.d.ts",
+			"import": "./dist/lib/index.js"
 		}
 	},
 	"module": "./dist/index.js",

@@ -1,9 +1,9 @@
 import { valueToNumber } from '@betfinio/abi';
 import { Bet } from '@betfinio/ui/dist/icons';
-import millify from 'millify';
+import { millify } from 'millify';
 import type { FC } from 'react';
 import * as React from 'react';
-import { cn } from '../../lib/utils.ts';
+import { cn } from '../../lib/utils';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '../ui/tooltip';
 
 export interface BetValueProps {

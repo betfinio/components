@@ -10,9 +10,7 @@
 	},
 	"module": "./dist/index.js",
 	"types": "./dist/index.d.ts",
-	"files": [
-		"dist"
-	],
+	"files": ["dist"],
 	"scripts": {
 		"build": "rslib build",
 		"check": "biome check --write",
@@ -24,7 +22,6 @@
 		"@biomejs/biome": "^1.9.4",
 		"@commitlint/cli": "^19.6.0",
 		"@commitlint/config-conventional": "^19.6.0",
-		"@radix-ui/react-popover": "^1.1.2",
 		"@rsbuild/core": "^1.1.4",
 		"@rsbuild/plugin-react": "^1.0.7",
 		"@rslib/core": "^0.1.0",
@@ -68,9 +65,26 @@
 		"class-variance-authority": "^0.7.0"
 	},
 	"dependencies": {
+		"@radix-ui/react-accordion": "^1.2.1",
+		"@radix-ui/react-checkbox": "^1.1.2",
 		"@radix-ui/react-dialog": "^1.1.2",
+		"@radix-ui/react-dropdown-menu": "^2.1.2",
+		"@radix-ui/react-popover": "^1.1.2",
+		"@radix-ui/react-progress": "^1.1.0",
+		"@radix-ui/react-radio-group": "^1.2.1",
+		"@radix-ui/react-scroll-area": "^1.2.1",
+		"@radix-ui/react-select": "^2.1.2",
 		"@radix-ui/react-separator": "^1.1.0",
 		"@radix-ui/react-slot": "^1.1.0",
-		"@radix-ui/react-tooltip": "^1.1.4"
+		"@radix-ui/react-tabs": "^1.1.1",
+		"@radix-ui/react-toast": "^1.2.2",
+		"@radix-ui/react-toggle": "^1.1.0",
+		"@radix-ui/react-toggle-group": "^1.1.0",
+		"@radix-ui/react-tooltip": "^1.1.4",
+		"@tanstack/react-table": "^8.20.5",
+		"cmdk": "^1.0.4",
+		"framer-motion": "^11.11.17",
+		"react-i18next": "^15.1.1",
+		"vaul": "^1.1.1"
 	}
 }

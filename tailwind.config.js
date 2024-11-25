@@ -19,6 +19,7 @@ module.exports = {
 					DEFAULT: 'var(--background)',
 					light: 'var(--background-light)',
 					lighter: 'var(--background-lighter)',
+					foreground: 'var(--background-foreground)',
 				},
 				foreground: 'var(--foreground)',
 				primary: {
@@ -42,7 +43,7 @@ module.exports = {
 					foreground: 'hsl(var(--muted-foreground))',
 				},
 				accent: {
-					DEFAULT: 'hsl(var(--accent))',
+					DEFAULT: 'var(--accent)',
 					foreground: 'hsl(var(--accent-foreground))',
 				},
 				'accent-secondary': {

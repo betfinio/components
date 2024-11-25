@@ -20,8 +20,8 @@
 		--primary-foreground: hsl(0, 0%, 0%);
 		--secondary: 247 39% 18%;
 		--secondary-foreground: 0 0% 100%;
-		--tertiary: 60 4.8% 95.9%;
-		--tertiary-foreground: 228 11% 47%;
+		--tertiary: hsl(60 4.8% 95.9%);
+		--tertiary-foreground: hsl(228 11% 47%);
 		--muted: 60 4.8% 95.9%;
 		--muted-foreground: 25 5.3% 44.7%;
 		--accent: hsl(60 4.8% 95.9%);

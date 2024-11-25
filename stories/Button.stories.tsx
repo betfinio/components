@@ -24,6 +24,10 @@ const meta = {
 			options: sizes,
 			control: { type: 'select' },
 		},
+		shape: {
+			options: ['default', 'pill'],
+			control: { type: 'select' },
+		},
 	},
 	args: { onClick: fn(), children: 'Button' },
 } satisfies Meta<typeof Button>;
@@ -68,6 +72,13 @@ export const Ghost: Story = {
 export const Link: Story = {
 	args: {
 		variant: 'link',
+	},
+};
+
+export const Pill: Story = {
+	args: {
+		variant: 'default',
+		shape: 'pill',
 	},
 };
 

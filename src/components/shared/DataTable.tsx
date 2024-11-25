@@ -3,7 +3,7 @@ import { type ColumnDef, type TableMeta, flexRender, getCoreRowModel, getPaginat
 import { Loader } from 'lucide-react';
 import * as React from 'react';
 import { cn as cx } from '../../lib/utils';
-import { DataTablePagination, Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '../ui';
+import { DataTablePagination, Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '../ui/table';
 
 interface DataTableProps<TData, TValue> {
 	columns: ColumnDef<TData, TValue>[];

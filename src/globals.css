@@ -6,26 +6,26 @@
 
 @layer base {
 	:root {
-		--background: hsl(227.14 31.82% 8.63%);
-		--background-light: #131624;
-		--background-lighter: #151a2a;
-		--foreground: hsl(220 13% 91%);
-		--card: hsl(226 33% 12%);
+		--background: 227.14 31.82% 8.63%;
+		--background-light: 229.41, 30.91%, 10.78%;
+		--background-lighter: 225.71, 33.33%, 12.35%;
+		--foreground: 220 13% 91%;
+		--card: 226 33% 12%;
 		--card-foreground: 20 14.3% 4.1%;
 		--card-secondary: 240 29% 28%;
 		--card-seconary-foreground: 20 14.3% 4.1%;
 		--popover: 227.14 31.82% 8.63%;
 		--popover-foreground: 220 13% 91%;
-		--primary: hsl(47.9 95.8% 53.1%);
-		--primary-foreground: hsl(0, 0%, 0%);
+		--primary: 47.9 95.8% 53.1%;
+		--primary-foreground: 0, 0%, 0%;
 		--secondary: 247 39% 18%;
-		--secondary-foreground: 0 0% 100%;
+		--secondary-foreground: 47.9 95.8% 53.1%;
 		--tertiary: 60 4.8% 95.9%;
 		--tertiary-foreground: 228 11% 47%;
 		--muted: 60 4.8% 95.9%;
 		--muted-foreground: 25 5.3% 44.7%;
-		--accent: hsl(60 4.8% 95.9%);
-		--accent-foreground: 220 13% 91%;
+		--accent: 247 39% 18%;
+		--accent-foreground: 47.9 95.8% 53.1%;
 		--accent-secondary: 60 4.8% 95.9%;
 		--accent-secondary-foreground: 48 96% 53%;
 		--destructive: 0 84.2% 60.2%;
@@ -35,6 +35,8 @@
 		--border: 198.75 21.05% 14.9%;
 		--input: 20 5.9% 90%;
 		--ring: 20 14.3% 4.1%;
+		--purple-box: 240, 21.63%, 51.96%;
+		--purple-table: 246.67, 39.13%, 18.04%;
 		--radius: 0.5rem;
 
 		--chart-1: 48 96% 53%;
@@ -66,7 +68,7 @@
 		--muted: 12 6.5% 15.1%;
 		--muted-foreground: 24 5.4% 63.9%;
 		--accent: 12 6.5% 15.1%;
-		--accent-foreground: 60 9.1% 97.8%;
+		--accent-foreground: 47.9 95.8% 53.1%;
 		--destructive: 0 62.8% 30.6%;
 		--destructive-foreground: 60 9.1% 97.8%;
 		--border: 198.75 21.05% 14.9%;

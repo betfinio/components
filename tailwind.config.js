@@ -16,22 +16,23 @@ module.exports = {
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
 				background: {
-					DEFAULT: 'var(--background)',
-					light: 'var(--background-light)',
-					lighter: 'var(--background-lighter)',
+					DEFAULT: 'hsl(var(--background))',
+					light: 'hsl(var(--background-light))',
+					lighter: 'hsl(var(--background-lighter))',
+					foreground: 'hsl(var(--background-foreground))',
 				},
-				foreground: 'var(--foreground)',
+				foreground: 'hsl(var(--foreground))',
 				primary: {
-					DEFAULT: 'var(--primary)',
-					foreground: 'var(--primary-foreground)',
+					DEFAULT: 'hsl(var(--primary))',
+					foreground: 'hsl(var(--primary-foreground))',
 				},
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',
 					foreground: 'hsl(var(--secondary-foreground))',
 				},
 				purple: {
-					box: '#6A6A9F',
-					table: '#201C40',
+					box: 'hsl(var(--purple-box))',
+					table: 'hsl(var(--purple-table))',
 				},
 				destructive: {
 					DEFAULT: 'hsl(var(--destructive))',

@@ -26,13 +26,12 @@
 		"./icons": {
 			"types": "./dist/src/icons/index.d.ts",
 			"import": "./dist/icons/index.js"
-		}
+		},
+		"./tailwind-config": "./tailwind.config.js"
 	},
 	"module": "./dist/index.js",
 	"types": "./dist/src/index.d.ts",
-	"files": [
-		"dist"
-	],
+	"files": ["dist", "tailwind.config.js"],
 	"scripts": {
 		"build": "rslib build",
 		"check": "biome check --write",

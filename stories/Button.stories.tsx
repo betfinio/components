@@ -40,6 +40,11 @@ export const Default: Story = {
 	},
 };
 
+export const Success: Story = {
+	args: {
+		variant: 'success',
+	},
+};
 export const Destructive: Story = {
 	args: {
 		variant: 'destructive',

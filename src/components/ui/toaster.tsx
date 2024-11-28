@@ -3,7 +3,7 @@ import * as React from 'react';
 import { useToast } from '../../hooks/use-toast.ts';
 import { Toast, ToastClose, ToastDescription, ToastProvider, ToastTitle, ToastViewport } from './toast';
 
-export function Toaster() {
+export function Toaster({ className = '' }: { className?: string }) {
 	const { toasts } = useToast();
 	return (
 		<ToastProvider>
@@ -12,8 +12,8 @@ export function Toaster() {
 					{!component ? (
 						<>
 							<div className="flex flex-row gap-4 items-center">
-								{variant === 'default' && <CircleCheck className={'text-green-400 w-8 h-8'} />}
-								{variant === 'destructive' && <CircleAlert className={'text-red-roulette w-8 h-8'} />}
+								{variant === 'default' && <CircleCheck className={'text-success w-8 h-8'} />}
+								{variant === 'destructive' && <CircleAlert className={'text-destructive w-8 h-8'} />}
 								{variant === 'soon' && <CircleAlert className={'text-purple-box w-8 h-8'} />}
 								{variant === 'loading' && <Loader className={'text-primary w-8 h-8 animate-spin'} />}
 
@@ -30,7 +30,7 @@ export function Toaster() {
 					<ToastClose />
 				</Toast>
 			))}
-			<ToastViewport />
+			<ToastViewport className={className} />
 		</ToastProvider>
 	);
 }

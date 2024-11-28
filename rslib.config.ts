@@ -21,7 +21,15 @@ export default defineConfig({
 		},
 	],
 	output: {
+		minify: true,
 		target: 'web',
+	},
+	tools: {
+		rspack: {
+			output: {
+				chunkLoading: 'import',
+			},
+		},
 	},
 	plugins: [
 		pluginReact({

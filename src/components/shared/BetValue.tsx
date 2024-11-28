@@ -39,7 +39,7 @@ export const BetValue: FC<BetValueProps> = ({
 					</div>
 				</TooltipTrigger>
 				<TooltipContent side={place} className={'bg-background-lighter text-white'}>
-					{prefix} {amount.toLocaleString(navigator.language, { maximumSignificantDigits: precision })} {postfix}
+					{prefix} {amount.toLocaleString('en')} {postfix}
 				</TooltipContent>
 			</Tooltip>
 		</TooltipProvider>

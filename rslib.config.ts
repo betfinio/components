@@ -23,6 +23,13 @@ export default defineConfig({
 	output: {
 		target: 'web',
 	},
+	tools: {
+		rspack: {
+			output: {
+				chunkLoading: 'import',
+			},
+		},
+	},
 	plugins: [
 		pluginReact({
 			swcReactOptions: {

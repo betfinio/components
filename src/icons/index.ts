@@ -38,6 +38,7 @@ import Facebook from './Facebook';
 import Fox from './Fox';
 import Github from './Github';
 import GoldenBars from './GoldenBars';
+import GoldenTrophy from './GoldenTrophy.tsx';
 import Graph from './Graph';
 import Hearts from './Hearts';
 import Hero from './Hero';
@@ -135,6 +136,7 @@ export {
 	RouletteIcon,
 	SliderDown,
 	SliderUp,
+	GoldenTrophy,
 	Slots,
 	Spades,
 	Sport,

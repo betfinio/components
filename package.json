@@ -31,10 +31,7 @@
 	},
 	"module": "./dist/index.js",
 	"types": "./dist/src/index.d.ts",
-	"files": [
-		"dist",
-		"tailwind.config.js"
-	],
+	"files": ["dist", "tailwind.config.js"],
 	"scripts": {
 		"build": "rslib build",
 		"check": "biome check --write",
@@ -102,6 +99,7 @@
 		"@radix-ui/react-separator": "^1.1.0",
 		"@radix-ui/react-slider": "^1.2.1",
 		"@radix-ui/react-slot": "^1.1.0",
+		"@radix-ui/react-switch": "^1.1.1",
 		"@radix-ui/react-tabs": "^1.1.1",
 		"@radix-ui/react-toast": "^1.2.2",
 		"@radix-ui/react-toggle": "^1.1.0",

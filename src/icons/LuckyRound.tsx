@@ -2,7 +2,7 @@ import type { FC } from 'react';
 import * as React from 'react';
 import type { IconProps } from './';
 
-export const LuckyRound: FC<IconProps> = ({ className }) => {
+const LuckyRound: FC<IconProps> = ({ className }) => {
 	return (
 		<svg width="24" height="24" className={className} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 			<g clipPath="url(#clip0_2405_4144)">
@@ -35,3 +35,5 @@ export const LuckyRound: FC<IconProps> = ({ className }) => {
 		</svg>
 	);
 };
+
+export default LuckyRound;

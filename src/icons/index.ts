@@ -47,6 +47,7 @@ import Letter from './Letter';
 import Link from './Link';
 import Linkedin from './Linkedin';
 import Lock from './Lock';
+import LuckyRound from './LuckyRound.tsx';
 import Medal from './Medal';
 import Media from './Media';
 import Menu from './Menu';
@@ -117,6 +118,7 @@ export {
 	Letter,
 	Link,
 	Linkedin,
+	LuckyRound,
 	Lock,
 	Medal,
 	Media,

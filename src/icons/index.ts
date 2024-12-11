@@ -38,6 +38,7 @@ import Facebook from './Facebook';
 import Fox from './Fox';
 import Github from './Github';
 import GoldenBars from './GoldenBars';
+import GoldenTrophy from './GoldenTrophy.tsx';
 import Graph from './Graph';
 import Hearts from './Hearts';
 import Hero from './Hero';
@@ -46,6 +47,7 @@ import Letter from './Letter';
 import Link from './Link';
 import Linkedin from './Linkedin';
 import Lock from './Lock';
+import LuckyRound from './LuckyRound.tsx';
 import Medal from './Medal';
 import Media from './Media';
 import Menu from './Menu';
@@ -116,6 +118,7 @@ export {
 	Letter,
 	Link,
 	Linkedin,
+	LuckyRound,
 	Lock,
 	Medal,
 	Media,
@@ -135,6 +138,7 @@ export {
 	RouletteIcon,
 	SliderDown,
 	SliderUp,
+	GoldenTrophy,
 	Slots,
 	Spades,
 	Sport,

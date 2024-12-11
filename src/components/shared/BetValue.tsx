@@ -13,6 +13,7 @@ export interface BetValueProps {
 	place?: 'top' | 'bottom' | 'left' | 'right';
 	prefix?: string;
 	postfix?: string;
+	withMillify?: boolean;
 	iconClassName?: string;
 	className?: string;
 }
@@ -25,10 +26,11 @@ export const BetValue: FC<BetValueProps> = ({
 	withIcon = false,
 	iconClassName = '',
 	postfix = ' BET',
+	withMillify = true,
 	className,
 }) => {
 	const amount: number = typeof value === 'bigint' ? valueToNumber(value) : value;
-	const number = millify(amount, { precision });
+	const number = withMillify ? millify(amount, { precision }) : amount.toLocaleString('en');
 	return (
 		<TooltipProvider delayDuration={300}>
 			<Tooltip>

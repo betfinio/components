@@ -7,7 +7,7 @@
 @layer base {
 	:root {
 		--background: 227.14 31.82% 8.63%;
-		--background-light: 229.41, 30.91%, 10.78%;
+		--background-light: 229.41, 31%, 11%;
 		--background-lighter: 225.71, 33.33%, 12.35%;
 		--foreground: 220 13% 91%;
 		--card: 226 33% 12%;

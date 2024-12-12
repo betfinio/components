@@ -13,6 +13,7 @@ import BetLogo from './BetLogo';
 import Blackjack from './Blackjack';
 import BnbChain from './BnbChain';
 import Bonus from './Bonus.tsx';
+import Certik from './Certik.tsx';
 import CertikWithIcon from './CertikWithIcon';
 import ChainlinkWithIcon from './ChainlinkWithIcon';
 import Check from './Check';
@@ -58,6 +59,7 @@ import People from './People';
 import PeopleSmall from './PeopleSmall';
 import Pig from './Pig';
 import Poker from './Poker';
+import Polygon from './Polygon.tsx';
 import PolygonWithIcon from './PolygonWithIcon';
 import Predict from './Predict';
 import PredictStaking from './PredictStaking';
@@ -91,6 +93,7 @@ export {
 	Blackjack,
 	BnbChain,
 	CertikWithIcon,
+	Certik,
 	ChainlinkWithIcon,
 	Check,
 	ChevronDown,
@@ -129,6 +132,7 @@ export {
 	PeopleSmall,
 	Pig,
 	Poker,
+	Polygon,
 	PolygonWithIcon,
 	Predict,
 	PredictStaking,

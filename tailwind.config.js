@@ -6,6 +6,9 @@ export default {
 	content: ['./src/**/*.{ts,tsx}', './stories/**/*.{ts,tsx}'],
 	theme: {
 		extend: {
+			screens: {
+				'2xl': '1440px',
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',

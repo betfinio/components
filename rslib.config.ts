@@ -19,6 +19,9 @@ export default defineConfig({
 		{
 			bundle: false,
 			dts: true,
+			performance: {
+				buildCache: false,
+			},
 			format: 'esm',
 		},
 	],

@@ -7,6 +7,5 @@ export const useMediaQuery = (customQuery?: string) => {
 	const isTouch = useMediaQueryLib({ query: '(pointer: coarse)' });
 	const isCustom = useMediaQueryLib({ query: customQuery || '(max-width: 639px)}' });
 	const isVertical = isMobile;
-
 	return { isMobile, isTablet, isVertical, isCustom, isTouch };
 };

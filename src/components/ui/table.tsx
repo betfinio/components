@@ -3,7 +3,6 @@ import * as React from 'react';
 
 import { Button } from './button.tsx';
 
-import cx from 'clsx';
 import { motion } from 'framer-motion';
 import { ChevronLeft, ChevronRight, ChevronsLeft, ChevronsRight } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
@@ -68,7 +67,7 @@ function DataTablePagination<TData>({ table, className }: DataTablePaginationPro
 			initial={{ opacity: 0 }}
 			animate={{ opacity: 1 }}
 			transition={{ duration: 0.5, ease: 'easeInOut' }}
-			className={cx('flex items-center justify-between py-2 mt-2', className)}
+			className={cn('flex items-center justify-between py-2 mt-2', className)}
 		>
 			<div className="flex-1 text-xs text-muted-foreground">
 				{table.getFilteredRowModel().rows.length} {t('results')}.

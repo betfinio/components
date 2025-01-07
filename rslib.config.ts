@@ -6,6 +6,8 @@ export default defineConfig({
 		entry: {
 			index: ['./src/**'],
 		},
+	},
+	resolve: {
 		alias: {
 			'@/*': './src/*',
 		},
@@ -21,7 +23,6 @@ export default defineConfig({
 		},
 	],
 	output: {
-		minify: true,
 		target: 'web',
 		cleanDistPath: true,
 	},

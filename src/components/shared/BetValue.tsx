@@ -13,6 +13,7 @@ export interface BetValueProps {
 	place?: 'top' | 'bottom' | 'left' | 'right';
 	prefix?: string;
 	postfix?: string;
+	iconPosition?: 'left' | 'right';
 	withMillify?: boolean;
 	iconClassName?: string;
 	className?: string;
@@ -26,6 +27,7 @@ export const BetValue: FC<BetValueProps> = ({
 	withIcon = false,
 	iconClassName = '',
 	postfix = ' BET',
+	iconPosition = 'right',
 	withMillify = true,
 	className,
 }) => {

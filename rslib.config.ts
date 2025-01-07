@@ -12,16 +12,10 @@ export default defineConfig({
 			'@/*': './src/*',
 		},
 	},
-	performance: {
-		buildCache: false,
-	},
 	lib: [
 		{
 			bundle: false,
 			dts: true,
-			performance: {
-				buildCache: false,
-			},
 			format: 'esm',
 		},
 	],
@@ -37,5 +31,11 @@ export default defineConfig({
 			},
 		},
 	},
-	plugins: [pluginReact({})],
+	plugins: [
+		pluginReact({
+			swcReactOptions: {
+				runtime: 'classic',
+			},
+		}),
+	],
 });

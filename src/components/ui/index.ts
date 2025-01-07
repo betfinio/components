@@ -1,5 +1,6 @@
 export * from './accordion';
 export * from './badge';
+export * from './button';
 export * from './breadcrumb';
 export * from './carousel';
 export * from './checkbox';
@@ -27,4 +28,3 @@ export * from './toggle-group';
 export * from './tooltip';
 export * from './switch';
 export * from './slider';
-export * from './button';

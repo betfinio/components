@@ -1,7 +1,7 @@
-import cx from 'clsx';
 import millify from 'millify';
 import type { FC } from 'react';
 import * as React from 'react';
+import { cn } from '../lib/utils';
 
 const Chip: FC<{ className?: string; value: number; fontSize: number; labelClassName: string }> = ({ className = '', value, labelClassName, fontSize = 6 }) => {
 	return (
@@ -80,7 +80,7 @@ const Chip: FC<{ className?: string; value: number; fontSize: number; labelClass
 					fill="currentColor"
 				/>
 			</svg>
-			<span className={cx('absolute left-1/2 -translate-y-1/2 -translate-x-1/2 text-white font-bold', labelClassName)} style={{ fontSize: `${fontSize}px` }}>
+			<span className={cn('absolute left-1/2 -translate-y-1/2 -translate-x-1/2 text-white font-bold', labelClassName)} style={{ fontSize: `${fontSize}px` }}>
 				{millify(value)}
 			</span>
 		</div>

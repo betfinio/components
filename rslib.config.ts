@@ -28,6 +28,7 @@ export default defineConfig({
 	output: {
 		target: 'web',
 		cleanDistPath: true,
+		minify: true,
 	},
 	tools: {
 		rspack: {
@@ -36,11 +37,5 @@ export default defineConfig({
 			},
 		},
 	},
-	plugins: [
-		pluginReact({
-			swcReactOptions: {
-				runtime: 'classic',
-			},
-		}),
-	],
+	plugins: [pluginReact({})],
 });

@@ -10,7 +10,8 @@ const toggleVariants = cva(
 		variants: {
 			variant: {
 				default: 'bg-transparent',
-				outline: 'bg-secondary text-secondary-foreground hover:bg-success/70 hover:text-success-foreground ',
+				outline:
+					'bg-secondary text-secondary-foreground hover:bg-success/70 hover:text-success-foreground data-[state=on]:bg-success data-[state=on]:text-success-foreground ',
 			},
 			size: {
 				default: 'h-10 px-3',

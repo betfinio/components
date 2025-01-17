@@ -1,4 +1,4 @@
-import type { InitialTableState } from '@tanstack/react-table';
+import type { InitialTableState, Row } from '@tanstack/react-table';
 import { type ColumnDef, type TableMeta, flexRender, getCoreRowModel, getPaginationRowModel, useReactTable } from '@tanstack/react-table';
 import { Loader } from 'lucide-react';
 import * as React from 'react';
@@ -11,7 +11,7 @@ interface DataTableProps<TData, TValue> {
 	isLoading?: boolean;
 	meta?: TableMeta<TData>;
 	state?: InitialTableState;
-	onRowClick?: (row: TData) => void;
+	onRowClick?: (row: TData, __row: Row<TData>) => void;
 	loaderClassName?: string;
 	noResultsClassName?: string;
 	hidePagination?: boolean;
@@ -70,7 +70,12 @@ export function DataTable<TData, TValue>({
 						</TableRow>
 					) : table.getRowModel().rows?.length ? (
 						table.getRowModel().rows.map((row) => (
-							<TableRow className={'cursor-pointer'} key={row.id} data-state={row.getIsSelected() && 'selected'} onClick={() => onRowClick?.(row.original)}>
+							<TableRow
+								className={'cursor-pointer'}
+								key={row.id}
+								data-state={row.getIsSelected() && 'selected'}
+								onClick={() => onRowClick?.(row.original, row)}
+							>
 								{row.getVisibleCells().map((cell) => (
 									<TableCell key={cell.id} className={cx(cell.column.columnDef.meta?.className)}>
 										{flexRender(cell.column.columnDef.cell, cell.getContext())}

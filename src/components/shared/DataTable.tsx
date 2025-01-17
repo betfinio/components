@@ -45,7 +45,6 @@ export function DataTable<TData, TValue>({
 		},
 	});
 
-	// Attach the table instance to the ref if provided
 	React.useImperativeHandle(tableRef, () => table);
 
 	return (

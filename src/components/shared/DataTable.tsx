@@ -11,7 +11,7 @@ interface DataTableProps<TData, TValue> {
 	isLoading?: boolean;
 	meta?: TableMeta<TData>;
 	state?: InitialTableState;
-	onRowClick?: (row: TData, __row: Row<TData>) => void;
+	onRowClick?: (row: TData, __row?: Row<TData>) => void;
 	loaderClassName?: string;
 	noResultsClassName?: string;
 	hidePagination?: boolean;

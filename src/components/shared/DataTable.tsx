@@ -30,6 +30,7 @@ export function DataTable<TData, TValue>({
 	noResultsClassName,
 	tableRef, // Accept the tableRef prop
 }: DataTableProps<TData, TValue>) {
+	React.useImperativeHandle(tableRef, () => table);
 	const table = useReactTable({
 		data,
 		columns,
@@ -44,8 +45,6 @@ export function DataTable<TData, TValue>({
 			...state,
 		},
 	});
-
-	React.useImperativeHandle(tableRef, () => table);
 
 	return (
 		<div>

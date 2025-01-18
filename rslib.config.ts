@@ -23,6 +23,11 @@ export default defineConfig({
 		target: 'web',
 		cleanDistPath: true,
 		minify: true,
+		externals: {
+			'framer-motion': 'framer-motion',
+			clsx: 'clsx',
+			'tailwind-merge': 'tailwind-merge',
+		},
 	},
 	tools: {
 		rspack: {

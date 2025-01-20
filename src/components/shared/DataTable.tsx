@@ -1,4 +1,4 @@
-import type { InitialTableState, Row } from '@tanstack/react-table';
+import type { InitialTableState, Row, Table as TanstackTable } from '@tanstack/react-table';
 import { type ColumnDef, type TableMeta, flexRender, getCoreRowModel, getPaginationRowModel, useReactTable } from '@tanstack/react-table';
 import { Loader } from 'lucide-react';
 import * as React from 'react';
@@ -15,6 +15,7 @@ interface DataTableProps<TData, TValue> {
 	loaderClassName?: string;
 	noResultsClassName?: string;
 	hidePagination?: boolean;
+	tableRef?: React.Ref<TanstackTable<TData>>; // Add tableRef to expose the instance
 }
 
 export function DataTable<TData, TValue>({
@@ -27,7 +28,9 @@ export function DataTable<TData, TValue>({
 	onRowClick,
 	loaderClassName,
 	noResultsClassName,
+	tableRef, // Accept the tableRef prop
 }: DataTableProps<TData, TValue>) {
+	React.useImperativeHandle(tableRef, () => table);
 	const table = useReactTable({
 		data,
 		columns,
@@ -75,6 +78,7 @@ export function DataTable<TData, TValue>({
 								key={row.id}
 								data-state={row.getIsSelected() && 'selected'}
 								onClick={() => onRowClick?.(row.original, row)}
+								data-row-id={row.id}
 							>
 								{row.getVisibleCells().map((cell) => (
 									<TableCell key={cell.id} className={cx(cell.column.columnDef.meta?.className)}>

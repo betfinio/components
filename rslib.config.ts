@@ -26,6 +26,7 @@ export default defineConfig({
 	},
 	tools: {
 		rspack: {
+			cache: false,
 			output: {
 				chunkLoading: 'import',
 			},

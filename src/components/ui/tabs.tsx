@@ -23,9 +23,9 @@ const tabVariants = cva(
 		variants: {
 			variant: {
 				default:
-					'data-[state=active]:border-primary  hover:data-[state=inactive]:border-primary/50 data-[state=inactive]:border-gray-800 data-[state=active]:text-white data-[state=active]:shadow-sm',
+					'data-[state=active]:border-primary hover:data-[state=inactive]:border-primary/50 data-[state=inactive]:border-gray-800 data-[state=active]:text-white data-[state=active]:shadow-sm',
 				contained:
-					'data-[state=active]:border-primary data-[state=active]:bg-primary data-[state=inactive]:border-transparent text-primary-foreground data-[state=inactive]:text-tertiary-foreground',
+					'data-[state=active]:border-primary data-[state=active]:bg-primary data-[state=inactive]:border-transparent data-[state=active]:text-primary-foreground data-[state=inactive]:text-muted-foreground',
 			},
 			size: {
 				default: 'px-3 py-1.5',

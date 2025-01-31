@@ -1,6 +1,6 @@
 import type { InitialTableState, Row, Table as TanstackTable } from '@tanstack/react-table';
-import { type ColumnDef, type TableMeta, flexRender, getCoreRowModel, getPaginationRowModel, useReactTable } from '@tanstack/react-table';
-import { Loader } from 'lucide-react';
+import { type ColumnDef, type TableMeta, flexRender, getCoreRowModel, getPaginationRowModel, getSortedRowModel, useReactTable } from '@tanstack/react-table';
+import { ArrowDown, ArrowDownIcon, ArrowUp, ArrowUpDown, ArrowUpIcon, ChevronsUpDown, Loader, MoveDown } from 'lucide-react';
 import * as React from 'react';
 import { cn as cx } from '../../lib/utils';
 import { DataTablePagination, Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '../ui/table';
@@ -16,6 +16,7 @@ interface DataTableProps<TData, TValue> {
 	noResultsClassName?: string;
 	hidePagination?: boolean;
 	tableRef?: React.Ref<TanstackTable<TData>>; // Add tableRef to expose the instance
+	enableSorting?: boolean;
 }
 
 export function DataTable<TData, TValue>({
@@ -29,6 +30,7 @@ export function DataTable<TData, TValue>({
 	loaderClassName,
 	noResultsClassName,
 	tableRef, // Accept the tableRef prop
+	enableSorting = false, // Add default value
 }: DataTableProps<TData, TValue>) {
 	React.useImperativeHandle(tableRef, () => table);
 	const table = useReactTable({
@@ -36,6 +38,8 @@ export function DataTable<TData, TValue>({
 		columns,
 		getCoreRowModel: getCoreRowModel(),
 		getPaginationRowModel: getPaginationRowModel(),
+		getSortedRowModel: getSortedRowModel(),
+		enableSorting,
 		meta: meta,
 		initialState: {
 			pagination: {
@@ -48,54 +52,69 @@ export function DataTable<TData, TValue>({
 
 	return (
 		<div>
-			<Table className="rounded-xl border border-border w-full">
-				<TableHeader>
-					{table.getHeaderGroups().map((headerGroup) => (
-						<TableRow key={headerGroup.id}>
-							{headerGroup.headers.map((header) => {
-								return (
-									<TableHead key={header.id} className={header.column.columnDef.meta?.className}>
-										{header.isPlaceholder ? null : flexRender(header.column.columnDef.header, header.getContext())}
-									</TableHead>
-								);
-							})}
-						</TableRow>
-					))}
-				</TableHeader>
-				<TableBody>
-					{isLoading ? (
-						<TableRow>
-							<TableCell colSpan={columns.length} className={cx('h-[200px]', loaderClassName)}>
-								<div className={'flex items-center justify-center'}>
-									<Loader className={'animate-spin'} />
-								</div>
-							</TableCell>
-						</TableRow>
-					) : table.getRowModel().rows?.length ? (
-						table.getRowModel().rows.map((row) => (
-							<TableRow
-								className={'cursor-pointer'}
-								key={row.id}
-								data-state={row.getIsSelected() && 'selected'}
-								onClick={() => onRowClick?.(row.original, row)}
-								data-row-id={row.id}
-							>
-								{row.getVisibleCells().map((cell) => (
-									<TableCell key={cell.id} className={cx(cell.column.columnDef.meta?.className)}>
-										{flexRender(cell.column.columnDef.cell, cell.getContext())}
-									</TableCell>
-								))}
+			<div className="rounded-lg border border-border w-full">
+				<Table className="">
+					<TableHeader>
+						{table.getHeaderGroups().map((headerGroup) => (
+							<TableRow key={headerGroup.id}>
+								{headerGroup.headers.map((header) => {
+									return (
+										<TableHead
+											key={header.id}
+											className={cx(header.column.columnDef.meta?.className, header.column.getCanSort() && 'cursor-pointer select-none')}
+											onClick={header.column.getToggleSortingHandler()}
+										>
+											<div className="flex items-center gap-1">
+												{header.isPlaceholder ? null : flexRender(header.column.columnDef.header, header.getContext())}
+												{header.column.getCanSort() && (
+													<div className="w-4 h-4">
+														{header.column.getIsSorted() === 'asc' && <ArrowUp className="w-4 h-4" />}
+														{header.column.getIsSorted() === 'desc' && <ArrowDown className="w-4 h-4" />}
+														{header.column.getIsSorted() === false && <ArrowUpDown className="w-4 h-4 opacity-50" />}
+													</div>
+												)}
+											</div>
+										</TableHead>
+									);
+								})}
 							</TableRow>
-						))
-					) : (
-						<TableRow>
-							<TableCell colSpan={columns.length} className={cx('h-24 text-center', noResultsClassName)}>
-								No results.
-							</TableCell>
-						</TableRow>
-					)}
-				</TableBody>
-			</Table>
+						))}
+					</TableHeader>
+					<TableBody>
+						{isLoading ? (
+							<TableRow>
+								<TableCell colSpan={columns.length} className={cx('h-[200px]', loaderClassName)}>
+									<div className={'flex items-center justify-center'}>
+										<Loader className={'animate-spin'} />
+									</div>
+								</TableCell>
+							</TableRow>
+						) : table.getRowModel().rows?.length ? (
+							table.getRowModel().rows.map((row) => (
+								<TableRow
+									className={'cursor-pointer'}
+									key={row.id}
+									data-state={row.getIsSelected() && 'selected'}
+									onClick={() => onRowClick?.(row.original, row)}
+									data-row-id={row.id}
+								>
+									{row.getVisibleCells().map((cell) => (
+										<TableCell key={cell.id} className={cx(cell.column.columnDef.meta?.className)}>
+											{flexRender(cell.column.columnDef.cell, cell.getContext())}
+										</TableCell>
+									))}
+								</TableRow>
+							))
+						) : (
+							<TableRow>
+								<TableCell colSpan={columns.length} className={cx('h-24 text-center', noResultsClassName)}>
+									No results.
+								</TableCell>
+							</TableRow>
+						)}
+					</TableBody>
+				</Table>
+			</div>
 			<DataTablePagination table={table} className={hidePagination ? 'hidden' : 'flex'} />
 		</div>
 	);

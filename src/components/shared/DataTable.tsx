@@ -97,7 +97,7 @@ export function DataTable<TData, TValue>({
 						) : table.getRowModel().rows?.length ? (
 							table.getRowModel().rows.map((row, index) => (
 								<TableRow
-									className={cx('cursor-pointer', { 'bg-background-lighter': withZebra && index % 2 === 1 && !row.getIsSelected() })}
+									className={cx('cursor-pointer', { 'bg-background-lighter': withZebra && index % 2 === 0 && !row.getIsSelected() })}
 									key={row.id}
 									data-state={row.getIsSelected() && 'selected'}
 									onClick={() => onRowClick?.(row.original, row)}

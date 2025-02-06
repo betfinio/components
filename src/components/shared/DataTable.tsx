@@ -1,8 +1,9 @@
 import type { InitialTableState, Row, Table as TanstackTable } from '@tanstack/react-table';
 import { type ColumnDef, type TableMeta, flexRender, getCoreRowModel, getPaginationRowModel, getSortedRowModel, useReactTable } from '@tanstack/react-table';
+import { cva } from 'class-variance-authority';
 import { ArrowDown, ArrowDownIcon, ArrowUp, ArrowUpDown, ArrowUpIcon, ChevronsUpDown, Loader, MoveDown } from 'lucide-react';
 import * as React from 'react';
-import { cn as cx } from '../../lib/utils';
+import { cn, cn as cx } from '../../lib/utils';
 import { DataTablePagination, Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '../ui/table';
 
 interface DataTableProps<TData, TValue> {
@@ -17,6 +18,8 @@ interface DataTableProps<TData, TValue> {
 	hidePagination?: boolean;
 	tableRef?: React.Ref<TanstackTable<TData>>; // Add tableRef to expose the instance
 	enableSorting?: boolean;
+	withZebra?: boolean;
+	className?: string;
 }
 
 export function DataTable<TData, TValue>({
@@ -31,6 +34,8 @@ export function DataTable<TData, TValue>({
 	noResultsClassName,
 	tableRef, // Accept the tableRef prop
 	enableSorting = false, // Add default value
+	withZebra = true,
+	className = '',
 }: DataTableProps<TData, TValue>) {
 	React.useImperativeHandle(tableRef, () => table);
 	const table = useReactTable({
@@ -51,7 +56,7 @@ export function DataTable<TData, TValue>({
 	});
 
 	return (
-		<div>
+		<div className={cn(cva('w-full')({ className }))}>
 			<div className="rounded-lg border border-border w-full">
 				<Table className="">
 					<TableHeader>
@@ -90,9 +95,9 @@ export function DataTable<TData, TValue>({
 								</TableCell>
 							</TableRow>
 						) : table.getRowModel().rows?.length ? (
-							table.getRowModel().rows.map((row) => (
+							table.getRowModel().rows.map((row, index) => (
 								<TableRow
-									className={'cursor-pointer'}
+									className={cx('cursor-pointer', { 'bg-background-lighter': withZebra && index % 2 === 1 && !row.getIsSelected() })}
 									key={row.id}
 									data-state={row.getIsSelected() && 'selected'}
 									onClick={() => onRowClick?.(row.original, row)}

@@ -53,10 +53,10 @@ TableCaption.displayName = 'TableCaption';
 
 interface DataTablePaginationProps<TData> {
 	table: ReactTable<TData>;
-	className: string;
+	className?: string;
 }
 
-function DataTablePagination<TData>({ table, className }: DataTablePaginationProps<TData>) {
+function DataTablePagination<TData>({ table, className = '' }: DataTablePaginationProps<TData>) {
 	const { t } = useTranslation('shared', { keyPrefix: 'tables' });
 
 	if (table.getFilteredRowModel().rows.length === 0) {

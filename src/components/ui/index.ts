@@ -28,3 +28,4 @@ export * from './toggle-group';
 export * from './tooltip';
 export * from './switch';
 export * from './slider';
+export * from './alert-dialog';

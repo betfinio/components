@@ -1,12 +1,17 @@
-import type { InitialTableState, Row, Table as TanstackTable } from '@tanstack/react-table';
+import type { InitialTableState, OnChangeFn, Row, Table as TanstackTable } from '@tanstack/react-table';
 import { type ColumnDef, type TableMeta, flexRender, getCoreRowModel, getPaginationRowModel, getSortedRowModel, useReactTable } from '@tanstack/react-table';
 import { cva } from 'class-variance-authority';
-import { ArrowDown, ArrowDownIcon, ArrowUp, ArrowUpDown, ArrowUpIcon, ChevronsUpDown, Loader, MoveDown } from 'lucide-react';
+import { ArrowDownIcon, ArrowUpDownIcon, ArrowUpIcon, Loader } from 'lucide-react';
 import * as React from 'react';
 import { cn, cn as cx } from '../../lib/utils';
-import { DataTablePagination, Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '../ui/table';
+import { DataTablePagination, DataTablePaginationProps, Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '../ui/table';
 
-interface DataTableProps<TData, TValue> {
+interface PaginationState {
+	pageIndex: number;
+	pageSize: number;
+}
+
+type BaseDataTableProps<TData, TValue> = {
 	columns: ColumnDef<TData, TValue>[];
 	data: TData[];
 	isLoading?: boolean;
@@ -20,7 +25,24 @@ interface DataTableProps<TData, TValue> {
 	enableSorting?: boolean;
 	withZebra?: boolean;
 	className?: string;
-}
+	serverPagination?: boolean;
+};
+
+type TableWithClientPaginationProps<TData, TValue> = BaseDataTableProps<TData, TValue> & {
+	serverPagination?: false | undefined;
+	totalCount?: number;
+	pagination?: PaginationState;
+	onPaginationChange?: (pagination: PaginationState) => void;
+};
+
+type TableWithServerPaginationProps<TData, TValue> = BaseDataTableProps<TData, TValue> & {
+	serverPagination: true;
+	totalCount: number;
+	pagination: PaginationState;
+	onPaginationChange: (pagination: PaginationState) => void;
+};
+
+export type DataTableProps<TData, TValue> = TableWithClientPaginationProps<TData, TValue> | TableWithServerPaginationProps<TData, TValue>;
 
 export function DataTable<TData, TValue>({
 	columns,
@@ -32,28 +54,49 @@ export function DataTable<TData, TValue>({
 	onRowClick,
 	loaderClassName,
 	noResultsClassName,
-	tableRef, // Accept the tableRef prop
-	enableSorting = false, // Add default value
+	tableRef,
+	enableSorting = false,
 	withZebra = true,
 	className = '',
+	serverPagination = false,
+	totalCount,
+	pagination: controlledPagination,
+	onPaginationChange: controlledOnPaginationChange,
 }: DataTableProps<TData, TValue>) {
-	React.useImperativeHandle(tableRef, () => table);
+	const [internalPagination, setInternalPagination] = React.useState<PaginationState>({
+		pageIndex: 0,
+		pageSize: 5,
+	});
+	const effectivePagination = controlledPagination || internalPagination;
+
+	const handlePaginationChange = React.useCallback(
+		(updater: (prev: PaginationState) => PaginationState) => {
+			const newPagination = updater(effectivePagination);
+			if (serverPagination && controlledOnPaginationChange) {
+				controlledOnPaginationChange(newPagination);
+			} else {
+				setInternalPagination(newPagination);
+			}
+		},
+		[effectivePagination, serverPagination, controlledOnPaginationChange],
+	);
+
 	const table = useReactTable({
 		data,
 		columns,
 		getCoreRowModel: getCoreRowModel(),
-		getPaginationRowModel: getPaginationRowModel(),
+		getPaginationRowModel: serverPagination ? undefined : getPaginationRowModel(),
 		getSortedRowModel: getSortedRowModel(),
 		enableSorting,
-		meta: meta,
-		initialState: {
-			pagination: {
-				pageSize: 5,
-				pageIndex: 0,
-			},
-			...state,
-		},
+		meta,
+		manualPagination: serverPagination,
+		rowCount: serverPagination && totalCount !== undefined ? totalCount : undefined,
+		state: { pagination: effectivePagination },
+		onPaginationChange: handlePaginationChange as OnChangeFn<PaginationState>,
+		initialState: { pagination: { pageIndex: 0, pageSize: 5 }, ...state },
 	});
+
+	React.useImperativeHandle(tableRef, () => table, [table]);
 
 	return (
 		<div className={cn(cva('w-full')({ className }))}>
@@ -62,26 +105,24 @@ export function DataTable<TData, TValue>({
 					<TableHeader>
 						{table.getHeaderGroups().map((headerGroup) => (
 							<TableRow key={headerGroup.id}>
-								{headerGroup.headers.map((header) => {
-									return (
-										<TableHead
-											key={header.id}
-											className={cx(header.column.columnDef.meta?.className, header.column.getCanSort() && 'cursor-pointer select-none')}
-											onClick={header.column.getToggleSortingHandler()}
-										>
-											<div className="flex items-center gap-1">
-												{header.isPlaceholder ? null : flexRender(header.column.columnDef.header, header.getContext())}
-												{header.column.getCanSort() && (
-													<div className="w-4 h-4">
-														{header.column.getIsSorted() === 'asc' && <ArrowUp className="w-4 h-4" />}
-														{header.column.getIsSorted() === 'desc' && <ArrowDown className="w-4 h-4" />}
-														{header.column.getIsSorted() === false && <ArrowUpDown className="w-4 h-4 opacity-50" />}
-													</div>
-												)}
-											</div>
-										</TableHead>
-									);
-								})}
+								{headerGroup.headers.map((header) => (
+									<TableHead
+										key={header.id}
+										className={cx(header.column.columnDef.meta?.className, header.column.getCanSort() && 'cursor-pointer select-none')}
+										onClick={header.column.getToggleSortingHandler()}
+									>
+										<div className="flex items-center gap-1">
+											{header.isPlaceholder ? null : flexRender(header.column.columnDef.header, header.getContext())}
+											{header.column.getCanSort() && (
+												<div className="w-4 h-4">
+													{header.column.getIsSorted() === 'asc' && <ArrowUpIcon className="w-4 h-4" />}
+													{header.column.getIsSorted() === 'desc' && <ArrowDownIcon className="w-4 h-4" />}
+													{header.column.getIsSorted() === false && <ArrowUpDownIcon className="w-4 h-4 opacity-50" />}
+												</div>
+											)}
+										</div>
+									</TableHead>
+								))}
 							</TableRow>
 						))}
 					</TableHeader>
@@ -89,16 +130,18 @@ export function DataTable<TData, TValue>({
 						{isLoading ? (
 							<TableRow>
 								<TableCell colSpan={columns.length} className={cx('h-[200px]', loaderClassName)}>
-									<div className={'flex items-center justify-center'}>
-										<Loader className={'animate-spin'} />
+									<div className="flex items-center justify-center">
+										<Loader className="animate-spin" />
 									</div>
 								</TableCell>
 							</TableRow>
 						) : table.getRowModel().rows?.length ? (
 							table.getRowModel().rows.map((row, index) => (
 								<TableRow
-									className={cx('cursor-pointer', { 'bg-background-lighter': withZebra && index % 2 === 0 && !row.getIsSelected() })}
 									key={row.id}
+									className={cx('cursor-pointer', {
+										'bg-background-lighter': withZebra && index % 2 === 0 && !row.getIsSelected(),
+									})}
 									data-state={row.getIsSelected() && 'selected'}
 									onClick={() => onRowClick?.(row.original, row)}
 									data-row-id={row.id}
@@ -120,7 +163,7 @@ export function DataTable<TData, TValue>({
 					</TableBody>
 				</Table>
 			</div>
-			{!hidePagination && <DataTablePagination table={table} />}
+			{!hidePagination && <DataTablePagination table={table} isLoading={isLoading} />}
 		</div>
 	);
 }

@@ -14,6 +14,14 @@ export default defineConfig({
 			format: 'esm',
 		},
 	],
+	tools: {
+		rspack: {
+			output: {
+				clean: true,
+				chunkLoading: 'import',
+			},
+		},
+	},
 	output: {
 		target: 'web',
 	},

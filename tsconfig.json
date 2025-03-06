@@ -11,7 +11,6 @@
 		"isolatedModules": true,
 		"resolveJsonModule": true,
 		"moduleResolution": "bundler",
-		"useDefineForClassFields": true,
 		"baseUrl": ".",
 		"paths": {
 			"@/src/*": ["./src/*"]

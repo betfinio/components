@@ -1,13 +1,11 @@
 {
 	"compilerOptions": {
 		"lib": ["DOM", "ES2021"],
-		"target": "ES2022",
 		"module": "ESNext",
 		"jsx": "react",
 		"strict": true,
 		"declaration": true,
 		"skipLibCheck": true,
-		"rootDir": ".",
 		"allowImportingTsExtensions": true,
 		"noEmit": true,
 		"isolatedModules": true,

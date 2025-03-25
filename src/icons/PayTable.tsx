@@ -4,7 +4,7 @@ import type { IconProps } from '.';
 
 const PayTable: FC<IconProps> = ({ className = '' }) => {
 	return (
-		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" className={className}>
 			<g clipPath="url(#clip0_4795_23883)">
 				<path
 					fillRule="evenodd"

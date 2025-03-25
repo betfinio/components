@@ -55,6 +55,7 @@ import Menu from './Menu';
 import MoneyHand from './MoneyHand';
 import MoneyUp from './MoneyUp';
 import Network from './Network';
+import PayTable from './PayTable';
 import People from './People';
 import PeopleSmall from './PeopleSmall';
 import Pig from './Pig';
@@ -152,4 +153,5 @@ export {
 	VolumeArrow,
 	Graph,
 	Warning,
+	PayTable,
 };

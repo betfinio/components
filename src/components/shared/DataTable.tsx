@@ -27,6 +27,7 @@ type BaseDataTableProps<TData, TValue> = {
 	withZebra?: boolean;
 	className?: string;
 	serverPagination?: boolean;
+	t: any;
 };
 
 type TableWithClientPaginationProps<TData, TValue> = BaseDataTableProps<TData, TValue> & {
@@ -63,6 +64,7 @@ export function DataTable<TData, TValue>({
 	totalCount,
 	pagination: controlledPagination,
 	onPaginationChange: controlledOnPaginationChange,
+	t,
 }: DataTableProps<TData, TValue>) {
 	const [internalPagination, setInternalPagination] = React.useState<PaginationState>({
 		pageIndex: 0,
@@ -164,7 +166,7 @@ export function DataTable<TData, TValue>({
 					</TableBody>
 				</Table>
 			</div>
-			{!hidePagination && <DataTablePagination table={table} isLoading={isLoading} />}
+			{!hidePagination && <DataTablePagination table={table} isLoading={isLoading} t={t} />}
 		</div>
 	);
 }

@@ -1,5 +1,5 @@
 import type { FC } from 'react';
-import * as React from 'react';
+
 import type { IconProps } from './';
 
 const Close: FC<IconProps> = ({ className = 'text-[#ffffff]', onClick }) => {

@@ -1,8 +1,8 @@
 import type { Table as ReactTable } from '@tanstack/react-table';
-import * as React from 'react';
 
 import { motion } from 'framer-motion';
 import { ChevronLeft, ChevronRight, ChevronsLeft, ChevronsRight } from 'lucide-react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { cn } from '../../lib/utils';
 import { Button } from './button.tsx';

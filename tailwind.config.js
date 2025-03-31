@@ -96,7 +96,7 @@ export default {
 				},
 			},
 			fontFamily: {
-				sans: ['Rubik', 'sans-serif'],
+				sans: ['Quicksand', 'sans-serif'],
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',

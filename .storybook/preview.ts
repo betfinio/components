@@ -1,19 +1,14 @@
 import type { Preview } from '@storybook/react';
 import '../src/globals.css';
-
 const preview: Preview = {
 	parameters: {
-		controls: {
-			matchers: {
-				color: /(background|color)$/i,
-				date: /Date$/i,
-			},
-		},
 		backgrounds: {
 			values: [
+				// 👇 Default values
+				{ name: 'Dark', value: '#10131e' },
 				{ name: 'Light', value: '#fff' },
-				{ name: 'Dark', value: '#0F121D' },
 			],
+			// 👇 Specify which background is shown by default
 			default: 'Dark',
 		},
 	},

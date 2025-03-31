@@ -7,11 +7,6 @@ export default defineConfig({
 			index: ['./src/**'],
 		},
 	},
-	resolve: {
-		alias: {
-			'@/*': './src/*',
-		},
-	},
 	lib: [
 		{
 			bundle: false,
@@ -19,24 +14,16 @@ export default defineConfig({
 			format: 'esm',
 		},
 	],
-	output: {
-		target: 'web',
-		cleanDistPath: true,
-		minify: true,
-	},
 	tools: {
 		rspack: {
-			cache: false,
 			output: {
+				clean: true,
 				chunkLoading: 'import',
 			},
 		},
 	},
-	plugins: [
-		pluginReact({
-			swcReactOptions: {
-				runtime: 'classic',
-			},
-		}),
-	],
+	output: {
+		target: 'web',
+	},
+	plugins: [pluginReact()],
 });

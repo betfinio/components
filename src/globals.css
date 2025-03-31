@@ -53,38 +53,6 @@
 		--green-roulette: 152.52 53.91% 47.65%;
 		--bonus: 217.22 91.22% 59.8%;
 	}
-
-	.dark {
-		--background: 20 14.3% 4.1%;
-		--foreground: 60 9.1% 97.8%;
-		--card: 20 14.3% 4.1%;
-		--card-foreground: 60 9.1% 97.8%;
-		--popover: 20 14.3% 4.1%;
-		--popover-foreground: 60 9.1% 97.8%;
-		--primary: 47.9 95.8% 53.1%;
-		--primary-foreground: 26 83.3% 14.1%;
-		--secondary: 12 6.5% 15.1%;
-		--secondary-foreground: 60 9.1% 97.8%;
-		--muted: 12 6.5% 15.1%;
-		--muted-foreground: 24 5.4% 63.9%;
-		--accent: 12 6.5% 15.1%;
-		--accent-foreground: 47.9 95.8% 53.1%;
-		--destructive: 0 62.8% 30.6%;
-		--destructive-foreground: 60 9.1% 97.8%;
-		--border: 198.75 21.05% 14.9%;
-		--input: 12 6.5% 15.1%;
-		--ring: 35.5 91.7% 32.9%;
-
-		--chart-1: 220 70% 50%; /* Blue */
-		--chart-2: 160 60% 45%; /* Teal */
-		--chart-3: 30 80% 55%; /* Orange */
-		--chart-4: 280 65% 60%; /* Purple */
-		--chart-5: 340 75% 55%; /* Deep Pink */
-		--chart-6: 45 90% 55%; /* Gold */
-		--chart-7: 15 80% 55%; /* Coral */
-		--chart-8: 0 70% 55%; /* Red */
-		--chart-9: 180 70% 50%; /* Turquoise */
-	}
 }
 
 @layer base {

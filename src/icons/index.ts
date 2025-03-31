@@ -55,6 +55,7 @@ import Menu from './Menu';
 import MoneyHand from './MoneyHand';
 import MoneyUp from './MoneyUp';
 import Network from './Network';
+import PayTable from './PayTable';
 import People from './People';
 import PeopleSmall from './PeopleSmall';
 import Pig from './Pig';
@@ -73,6 +74,7 @@ import Slots from './Slots';
 import Spades from './Spades';
 import Sport from './Sport';
 import Staking from './Staking';
+import Ticket from './Ticket';
 import Twitter from './Twitter';
 import Uniswap from './Uniswap';
 import VolumeArrow from './VolumeArrow';
@@ -141,6 +143,7 @@ export {
 	Roulette,
 	RouletteIcon,
 	SliderDown,
+	Ticket,
 	SliderUp,
 	GoldenTrophy,
 	Slots,
@@ -152,4 +155,5 @@ export {
 	VolumeArrow,
 	Graph,
 	Warning,
+	PayTable,
 };

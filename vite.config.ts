@@ -34,7 +34,7 @@ export default defineConfig({
 				entryFileNames: '[name].js',
 			},
 		},
-		minify: false,
+		minify: true,
 		sourcemap: true,
 		outDir: 'dist',
 		emptyOutDir: true,

@@ -27,17 +27,16 @@
 			"types": "./dist/icons/index.d.ts",
 			"import": "./dist/icons/index.js"
 		},
-		"./tailwind-config": "./tailwind.config.js"
+		"./tailwind-config": "./tailwind.config.js",
+		"./style.css": "./dist/components.css"
 	},
 	"module": "./dist/index.js",
 	"types": "./dist/index.d.ts",
-	"files": [
-		"dist",
-		"tailwind.config.js"
-	],
+	"files": ["dist", "tailwind.config.js"],
 	"scripts": {
 		"dev": "vite build --watch",
 		"build": "tsc && vite build",
+		"check": "biome check --write",
 		"lint": "biome check src",
 		"format": "biome format --write src",
 		"storybook": "storybook dev -p 6006",

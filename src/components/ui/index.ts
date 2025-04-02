@@ -24,6 +24,7 @@ export * from './tabs';
 export * from './toast';
 export * from './toaster';
 export * from './toggle';
+export * from './collapsible';
 export * from './toggle-group';
 export * from './tooltip';
 export * from './switch';

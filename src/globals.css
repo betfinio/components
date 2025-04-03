@@ -100,15 +100,3 @@
 		@apply bg-background text-foreground;
 	}
 }
-
-@layer components {
-	.sm-only {
-		@apply block sm:hidden;
-	}
-	.md-only {
-		@apply hidden md:block;
-	}
-	.lg-only {
-		@apply hidden lg:block;
-	}
-}

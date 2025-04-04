@@ -22,7 +22,6 @@ export * from './select';
 export * from './table';
 export * from './tabs';
 export * from './toast';
-export * from './toaster';
 export * from './toggle';
 export * from './collapsible';
 export * from './toggle-group';

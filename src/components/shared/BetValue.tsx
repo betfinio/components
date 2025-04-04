@@ -1,8 +1,8 @@
-import { Bet } from '@/src/icons';
 import { valueToNumber } from '@betfinio/abi';
 import { millify } from 'millify';
 import type { FC } from 'react';
-import * as React from 'react';
+
+import { Bet } from '@/icons';
 import { cn } from '../../lib/utils';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '../ui/tooltip';
 

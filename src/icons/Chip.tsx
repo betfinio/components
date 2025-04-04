@@ -1,6 +1,6 @@
 import millify from 'millify';
 import type { FC } from 'react';
-import * as React from 'react';
+
 import { cn } from '../lib/utils';
 
 const Chip: FC<{ className?: string; value: number; fontSize: number; labelClassName: string }> = ({ className = '', value, labelClassName, fontSize = 6 }) => {

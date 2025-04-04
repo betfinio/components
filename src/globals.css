@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -52,6 +52,17 @@
 		--black-roulette: 198.75 21.05% 14.9%;
 		--green-roulette: 152.52 53.91% 47.65%;
 		--bonus: 217.22 91.22% 59.8%;
+		/* Sidebar */
+		--sidebar-background: 227.14 31.82% 8.63%;
+		--sidebar-foreground: 240 4.8% 95.9%;
+		--sidebar-primary: 224.3 76.3% 48%;
+		--sidebar-primary-foreground: 0 0% 100%;
+		--sidebar-accent: 240 3.7% 15.9%;
+		--sidebar-accent-foreground: 240 4.8% 95.9%;
+		--sidebar-border: 240 3.7% 15.9%;
+		--sidebar-ring: 217.2 91.2% 59.8%;
+		--sidebar-item: 0 0% 100%;
+		--sidebar-background-light: 245.1 90% 80%;
 	}
 }
 
@@ -87,17 +98,5 @@
 	}
 	body {
 		@apply bg-background text-foreground;
-	}
-}
-
-@layer components {
-	.sm-only {
-		@apply block sm:hidden;
-	}
-	.md-only {
-		@apply hidden md:block;
-	}
-	.lg-only {
-		@apply hidden lg:block;
 	}
 }

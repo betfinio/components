@@ -1,7 +1,7 @@
 import * as TabsPrimitive from '@radix-ui/react-tabs';
-import * as React from 'react';
 
 import { type VariantProps, cva } from 'class-variance-authority';
+import React from 'react';
 import { cn } from '../../lib/utils';
 
 const Tabs = TabsPrimitive.Root;

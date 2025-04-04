@@ -71,6 +71,18 @@ export default {
 				bonus: {
 					DEFAULT: 'hsl(var(--bonus))',
 				},
+				sidebar: {
+					DEFAULT: 'hsl(var(--sidebar-background))',
+					foreground: 'hsl(var(--sidebar-foreground))',
+					primary: 'hsl(var(--sidebar-primary))',
+					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
+					accent: 'hsl(var(--sidebar-accent))',
+					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
+					border: 'hsl(var(--sidebar-border))',
+					ring: 'hsl(var(--sidebar-ring))',
+					item: 'hsl(var(--sidebar-item))',
+					'background-light': 'hsl(var(--sidebar-background-light))',
+				},
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -96,7 +108,7 @@ export default {
 				},
 			},
 			fontFamily: {
-				sans: ['Rubik', 'sans-serif'],
+				sans: ['Quicksand', 'sans-serif'],
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',

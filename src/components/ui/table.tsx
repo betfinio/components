@@ -1,9 +1,8 @@
 import type { Table as ReactTable } from '@tanstack/react-table';
-import * as React from 'react';
 
 import { motion } from 'framer-motion';
 import { ChevronLeft, ChevronRight, ChevronsLeft, ChevronsRight } from 'lucide-react';
-import { useTranslation } from 'react-i18next';
+import React from 'react';
 import { cn } from '../../lib/utils';
 import { Button } from './button.tsx';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './select';
@@ -56,8 +55,7 @@ interface DataTablePaginationProps<TData> {
 	isLoading?: boolean;
 }
 
-function DataTablePagination<TData>({ table, className = '', isLoading = false }: DataTablePaginationProps<TData>) {
-	const { t } = useTranslation('shared', { keyPrefix: 'tables' });
+function DataTablePagination<TData>({ table, className = '', isLoading = false, t }: DataTablePaginationProps<TData> & { t: any }) {
 	const { pageIndex, pageSize } = table.getState().pagination;
 
 	const computedPageCount = table.getPageCount();

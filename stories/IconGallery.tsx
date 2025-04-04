@@ -1,7 +1,7 @@
 import { IconGallery as GalleryBlock, IconItem } from '@storybook/blocks';
 import { styled } from '@storybook/theming';
-import * as React from 'react';
 
+import React from 'react';
 import * as Icon from '../src/icons/index';
 
 const Input = styled.input(({ theme }) => ({

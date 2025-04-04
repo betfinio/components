@@ -1,5 +1,5 @@
 import { dirname, join } from 'node:path';
-import type { StorybookConfig } from 'storybook-react-rsbuild';
+import type { StorybookConfig } from 'storybook/internal/types';
 
 /**
  * This function is used to resolve the absolute path of a package.
@@ -11,25 +11,16 @@ function getAbsolutePath(value: string): any {
 
 const config: StorybookConfig = {
 	stories: ['../stories/**/*.mdx', '../stories/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
-	addons: [
-		'@storybook/addon-onboarding',
-		'@storybook/addon-links',
-		'@storybook/addon-essentials',
-		'@storybook/addon-interactions',
-		{
-			name: getAbsolutePath('storybook-addon-rslib'),
-		},
-	],
+	addons: ['@storybook/addon-onboarding', '@storybook/addon-links', '@storybook/addon-essentials', '@storybook/addon-interactions'],
 	framework: {
-		name: getAbsolutePath('storybook-react-rsbuild'),
+		name: '@storybook/react-vite',
 		options: {},
+	},
+	core: {
+		builder: '@storybook/builder-vite', // 👈 The builder enabled here.
 	},
 	docs: {
 		autodocs: 'tag',
-	},
-	typescript: {
-		reactDocgen: 'react-docgen-typescript',
-		check: true,
 	},
 };
 

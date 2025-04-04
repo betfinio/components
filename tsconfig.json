@@ -1,20 +1,25 @@
 {
 	"compilerOptions": {
-		"lib": ["DOM", "ES2021"],
+		"target": "ES2020",
+		"useDefineForClassFields": true,
+		"lib": ["DOM", "DOM.Iterable", "ESNext"],
 		"module": "ESNext",
-		"jsx": "react",
-		"strict": true,
-		"declaration": true,
 		"skipLibCheck": true,
-		"allowImportingTsExtensions": true,
-		"noEmit": true,
-		"isolatedModules": true,
-		"resolveJsonModule": true,
 		"moduleResolution": "bundler",
+		"allowImportingTsExtensions": true,
+		"resolveJsonModule": true,
+		"isolatedModules": true,
+		"noEmit": true,
+		"jsx": "react-jsx",
+		"strict": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"noFallthroughCasesInSwitch": true,
+		"declaration": true,
 		"baseUrl": ".",
 		"paths": {
-			"@/src/*": ["./src/*"]
+			"@/*": ["./src/*"]
 		}
 	},
-	"include": ["src"]
+	"include": ["src", "stories/Sonner.stories.tsx"]
 }

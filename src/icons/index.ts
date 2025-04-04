@@ -10,6 +10,7 @@ import Bank from './Bank';
 import BankBig from './BankBig';
 import Bet from './Bet';
 import BetLogo from './BetLogo';
+import BetfinLogo from './BetfinLogo';
 import Blackjack from './Blackjack';
 import BnbChain from './BnbChain';
 import Bonus from './Bonus.tsx';
@@ -47,6 +48,7 @@ import Instagram from './Instagram';
 import Letter from './Letter';
 import Link from './Link';
 import Linkedin from './Linkedin';
+import Lobby from './Lobby';
 import Lock from './Lock';
 import LuckyRound from './LuckyRound.tsx';
 import Medal from './Medal';
@@ -74,6 +76,7 @@ import Slots from './Slots';
 import Spades from './Spades';
 import Sport from './Sport';
 import Staking from './Staking';
+import { Stones } from './Stones';
 import Ticket from './Ticket';
 import Twitter from './Twitter';
 import Uniswap from './Uniswap';
@@ -84,12 +87,15 @@ export {
 	Affiliate,
 	Bag,
 	Bank,
+	Stones,
 	BankBig,
 	DirectAffiliate,
 	DepthAffiliate,
 	MoneyUp,
 	Bet,
+	BetfinLogo,
 	ConservativeStaking,
+	Lobby,
 	BetLogo,
 	Bonus,
 	Blackjack,

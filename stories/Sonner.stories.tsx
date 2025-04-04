@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Toaster, toast } from 'sonner';
+import { toast } from 'sonner';
 import { Button } from '../src/components/ui/button';
 import { SonnerToaster } from '../src/components/ui/sonner';
 
@@ -45,7 +45,7 @@ const meta: Meta<typeof SonnerToaster> = {
 
 export default meta;
 
-type Story = StoryObj<typeof Toaster>;
+type Story = StoryObj<typeof SonnerToaster>;
 
 export const Default: Story = {
 	args: {},
@@ -66,7 +66,7 @@ export const CustomDuration: Story = {
 export const RichToast: Story = {
 	render: () => (
 		<>
-			<Toaster />
+			<SonnerToaster />
 			<Button
 				onClick={() =>
 					toast(

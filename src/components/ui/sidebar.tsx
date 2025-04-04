@@ -218,7 +218,7 @@ const Sidebar = React.forwardRef<
 			>
 				<div
 					data-sidebar="sidebar"
-					className="flex h-full w-full flex-col bg-gradient-to-b relative overflow-hidden from-zinc-900/0 to-zinc-900 group-data-[variant=floating]:rounded-lg group-data-[variant=floating]:border group-data-[variant=floating]:border-sidebar-border group-data-[variant=floating]:shadow"
+					className="flex h-full w-full flex-col relative overflow-hidden bg-gradient-to-b from-background to-secondary group-data-[variant=floating]:rounded-lg group-data-[variant=floating]:border group-data-[variant=floating]:border-sidebar-border group-data-[variant=floating]:shadow"
 				>
 					<div className="w-80 h-[617px] top-1/2 -translate-y-[40%] bg-sidebar-background-light/80 rounded-full blur-[200px] absolute -right-56" />
 					{children}

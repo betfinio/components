@@ -64,7 +64,7 @@ export const Default: Story = {
 		const minimized = state === 'collapsed';
 
 		return (
-			<Sidebar variant="sidebar">
+			<Sidebar variant="floating" collapsible="icon">
 				<SidebarHeader>
 					<div className="flex items-center justify-between p-2">
 						<BetfinLogo className="w-24" />

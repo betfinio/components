@@ -32,10 +32,7 @@
 	},
 	"module": "./dist/index.js",
 	"types": "./dist/index.d.ts",
-	"files": [
-		"dist",
-		"tailwind.config.js"
-	],
+	"files": ["dist", "tailwind.config.js"],
 	"scripts": {
 		"dev": "vite build --watch",
 		"build": "tsc && vite build",
@@ -95,7 +92,6 @@
 	},
 	"dependencies": {
 		"@betfinio/abi": "^2.4.2",
-		"@betfinio/ui": "^1.0.11",
 		"@radix-ui/react-accordion": "^1.2.3",
 		"@radix-ui/react-alert-dialog": "^1.1.6",
 		"@radix-ui/react-checkbox": "^1.1.4",

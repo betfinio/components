@@ -27,6 +27,7 @@ export * from './toggle';
 export * from './collapsible';
 export * from './toggle-group';
 export * from './tooltip';
+export * from './sonner';
 export * from './switch';
 export * from './slider';
 export * from './sidebar';

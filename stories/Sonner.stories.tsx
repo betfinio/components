@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { toast } from 'sonner';
+import { Toaster, toast } from 'sonner';
 import { Button } from '../src/components/ui/button';
-import { Toaster } from '../src/components/ui/sonner';
+import { SonnerToaster } from '../src/components/ui/sonner';
 
-const meta: Meta<typeof Toaster> = {
+const meta: Meta<typeof SonnerToaster> = {
 	title: 'Sonner',
-	component: Toaster,
+	component: SonnerToaster,
 	decorators: [
 		(Story) => (
 			<div>

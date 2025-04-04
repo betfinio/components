@@ -19,7 +19,7 @@ const meta: Meta<typeof Toaster> = {
 							toast('Notification with action', {
 								action: {
 									label: 'Undo',
-									onClick: () => console.log('Undo clicked'),
+									onClick: () => console.log('Undo clicked, lol'),
 								},
 							})
 						}

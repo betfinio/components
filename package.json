@@ -1,6 +1,6 @@
 {
 	"name": "@betfinio/components",
-	"version": "1.8.0-dev.13",
+	"version": "1.8.0-dev.14",
 	"type": "module",
 	"exports": {
 		".": {
@@ -32,10 +32,7 @@
 	},
 	"module": "./dist/index.js",
 	"types": "./dist/index.d.ts",
-	"files": [
-		"dist",
-		"tailwind.config.js"
-	],
+	"files": ["dist", "tailwind.config.js"],
 	"scripts": {
 		"dev": "vite build --watch",
 		"build": "tsc && vite build",

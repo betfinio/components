@@ -1,8 +1,8 @@
-import type { LucideProps } from 'lucide-react';
-import React, { type ForwardRefExoticComponent, type RefAttributes } from 'react';
+import type { FC } from 'react';
+import type { IconProps } from '.';
 import { cn } from '../lib/utils';
 
-const Ticket: ForwardRefExoticComponent<Omit<LucideProps, 'ref'> & RefAttributes<SVGSVGElement>> = React.forwardRef(({ ...props }, ref) => {
+const Ticket: FC<IconProps> = ({ ...props }) => {
 	return (
 		<svg
 			width="50"
@@ -10,7 +10,6 @@ const Ticket: ForwardRefExoticComponent<Omit<LucideProps, 'ref'> & RefAttributes
 			viewBox="0 0 50 50"
 			fill="none"
 			xmlns="http://www.w3.org/2000/svg"
-			ref={ref}
 			className={cn('text-primary', props.className)}
 			role="presentation"
 			{...props}
@@ -36,6 +35,6 @@ const Ticket: ForwardRefExoticComponent<Omit<LucideProps, 'ref'> & RefAttributes
 			</defs>
 		</svg>
 	);
-});
+};
 
 export default Ticket;

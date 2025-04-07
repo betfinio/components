@@ -10,11 +10,18 @@ interface CustomProps {
 	invertBorder?: boolean;
 }
 
-const Slider = React.forwardRef<React.ElementRef<typeof SliderPrimitive.Root>, React.ComponentPropsWithoutRef<typeof SliderPrimitive.Root> & CustomProps>(
-	({ className, trackClassName, rangeClassName, thumbClassName, invertBorder = false, value, min = 0, max = 100, onValueChange, ...props }, ref) => {
+interface SliderProps extends React.ComponentPropsWithoutRef<typeof SliderPrimitive.Root>, CustomProps {
+	value: number[];
+	min?: number;
+	max?: number;
+	onValueChange?: (value: number[]) => void;
+}
+
+const Slider = React.forwardRef<React.ComponentPropsWithoutRef<typeof SliderPrimitive.Root>, SliderProps>(
+	({ className, trackClassName, rangeClassName, thumbClassName, invertBorder = false, value, min = 0, max = 100, onValueChange, ...props }) => {
 		// Ajusta o valor para manter a mesma posição visual quando invertido
 		const adjustedValue = React.useMemo(() => {
-			return invertBorder ? value?.map((v) => max + min - v) : value;
+			return invertBorder ? value?.map((v: number) => max + min - v) : value;
 		}, [value, invertBorder, max, min]);
 
 		// Handler que re-ajusta o valor antes de enviá-lo para o callback original
@@ -30,8 +37,6 @@ const Slider = React.forwardRef<React.ElementRef<typeof SliderPrimitive.Root>, R
 
 		return (
 			<SliderPrimitive.Root
-				ref={ref}
-				inverted={invertBorder}
 				value={adjustedValue}
 				min={min}
 				max={max}
@@ -53,6 +58,7 @@ const Slider = React.forwardRef<React.ElementRef<typeof SliderPrimitive.Root>, R
 		);
 	},
 );
+
 Slider.displayName = SliderPrimitive.Root.displayName;
 
 export { Slider };

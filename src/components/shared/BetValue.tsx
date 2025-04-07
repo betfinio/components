@@ -38,9 +38,9 @@ export const BetValue: FC<BetValueProps> = ({
 			<Tooltip>
 				<TooltipTrigger asChild>
 					<div className={cn(className, 'flex flex-row items-center cursor-pointer justify-start w-fit gap-1')}>
-						{withIcon && iconPosition === 'left' && <Bet className={cn('w-4 h-4 stroke-0 text-primary', iconClassName)} />}
+						{withIcon && iconPosition === 'left' && <Bet className={cn('size-4 stroke-0 text-primary', iconClassName)} />}
 						{number}
-						{withIcon && iconPosition === 'right' && <Bet className={cn('w-4 h-4 stroke-0 text-primary', iconClassName)} />}
+						{withIcon && iconPosition === 'right' && <Bet className={cn('size-4 stroke-0 text-primary', iconClassName)} />}
 					</div>
 				</TooltipTrigger>
 				<TooltipContent side={place} className={'bg-background-lighter text-white'}>

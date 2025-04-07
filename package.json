@@ -27,13 +27,11 @@
 			"types": "./dist/icons/index.d.ts",
 			"import": "./dist/icons/index.js"
 		},
-		"./globals.css": "./dist/components.css"
+		"./globals.css": "./src/globals.css"
 	},
 	"module": "./dist/index.js",
 	"types": "./dist/index.d.ts",
-	"files": [
-		"dist"
-	],
+	"files": ["dist", "src/globals.css"],
 	"scripts": {
 		"dev": "vite build --watch",
 		"build": "tsc && vite build",

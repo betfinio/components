@@ -3,6 +3,8 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+@custom-variant dark (&:is(.dark *));
+
 @theme inline {
 	--breakpoint-2xl: 1440px;
 
@@ -93,90 +95,88 @@
 	}
 }
 
-/*
-  The default border color has changed to `currentcolor` in Tailwind CSS v4,
-  so we've added these compatibility styles to make sure everything still
-  looks the same as it did with Tailwind CSS v3.
-
-  If we ever want to remove these styles, we need to add an explicit border
-  color utility to any element that depends on these defaults.
-*/
 @layer base {
 	*,
 	::after,
 	::before,
 	::backdrop,
 	::file-selector-button {
-		border-color: var(--color-gray-200, currentcolor);
+		border-color: var(--color-border, currentcolor);
 	}
-}
-
-@layer base {
-	:root {
-		--background: hsl(227.14 31.82% 8.63%);
-		--background-light: hsl(229.41 31% 11%);
-		--background-lighter: hsl(225.71 33.33% 12.35%);
-		--foreground: hsl(220 13% 91%);
-		--card: hsl(226 33% 12%);
-		--card-foreground: hsl(20 14.3% 4.1%);
-		--card-secondary: hsl(240 29% 28%);
-		--card-seconary-foreground: hsl(20 14.3% 4.1%);
-		--popover: hsl(227.14 31.82% 8.63%);
-		--popover-foreground: hsl(220 13% 91%);
-		--primary: hsl(47.9 95.8% 53.1%);
-		--primary-foreground: hsl(0, 0%, 0%);
-		--secondary: hsl(247 39% 18%);
-		--secondary-foreground: hsl(47.9 95.8% 53.1%);
-		--tertiary: hsl(60 4.8% 95.9%);
-		--tertiary-foreground: hsl(228 11% 47%);
-		--muted: hsl(60 4.8% 95.9%);
-		--muted-foreground: hsl(25 5.3% 44.7%);
-		--accent: hsl(247 39% 18%);
-		--accent-foreground: hsl(47.9 95.8% 53.1%);
-		--accent-secondary: hsl(60 4.8% 95.9%);
-		--accent-secondary-foreground: hsl(48 96% 53%);
-		--destructive: hsl(0 84.2% 60.2%);
-		--destructive-foreground: hsl(60 9.1% 97.8%);
-		--success: hsl(142 70.56% 45.29%);
-		--success-foreground: hsl(60 9.1% 97.8%);
-		--border: hsl(198.75 21.05% 14.9%);
-		--input: hsl(20 5.9% 90%);
-		--ring: hsl(20 14.3% 4.1%);
-		--purple-box: hsl(240, 21.63%, 51.96%);
-		--purple-table: hsl(246.67, 39.13%, 18.04%);
-		--radius: 0.5rem;
-
-		--chart-1: hsl(48 96% 53%);
-		--chart-2: hsl(240 22% 52%);
-		--chart-3: hsl(30 80% 55%); /* Orange */
-		--chart-4: hsl(280 65% 60%); /* Purple */
-		--chart-5: hsl(340 75% 55%); /* Deep Pink */
-		--chart-6: hsl(200 65% 45%); /* Muted Blue-Green */
-		--chart-7: hsl(15 80% 55%); /* Coral */
-		--chart-8: hsl(0 70% 55%); /* Red */
-		--chart-9: hsl(180 70% 50%); /* Turquoise */
-		--red-roulette: hsl(346 71% 54%);
-		--black-roulette: hsl(198.75 21.05% 14.9%);
-		--green-roulette: hsl(152.52 53.91% 47.65%);
-		--bonus: hsl(217.22 91.22% 59.8%);
-		/* Sidebar */
-		--sidebar-background: hsl(227.14 31.82% 8.63%);
-		--sidebar-foreground: hsl(240 4.8% 95.9%);
-		--sidebar-primary: hsl(224.3 76.3% 48%);
-		--sidebar-primary-foreground: hsl(0 0% 100%);
-		--sidebar-accent: hsl(240 3.7% 15.9%);
-		--sidebar-accent-foreground: hsl(240 4.8% 95.9%);
-		--sidebar-border: hsl(240 3.7% 15.9%);
-		--sidebar-ring: hsl(217.2 91.2% 59.8%);
-		--sidebar-item: hsl(0 0% 100%);
-		--sidebar-background-light: hsl(245.1 90% 80%);
-	}
-}
-
-@layer base {
 	* {
-		border-color: var(--color-border);
+		@apply border-border outline-none;
 	}
+	body {
+		background-color: var(--background);
+		color: var(--foreground);
+	}
+	button:not(:disabled),
+	[role="button"]:not(:disabled) {
+		cursor: pointer;
+	}
+	dialog {
+		margin: auto;
+	}
+}
+
+:root {
+	--background: hsl(227.14 31.82% 8.63%);
+	--background-light: hsl(229.41 31% 11%);
+	--background-lighter: hsl(225.71 33.33% 12.35%);
+	--foreground: hsl(220 13% 91%);
+	--card: hsl(226 33% 12%);
+	--card-foreground: hsl(20 14.3% 4.1%);
+	--card-secondary: hsl(240 29% 28%);
+	--card-seconary-foreground: hsl(20 14.3% 4.1%);
+	--popover: hsl(227.14 31.82% 8.63%);
+	--popover-foreground: hsl(220 13% 91%);
+	--primary: hsl(47.9 95.8% 53.1%);
+	--primary-foreground: hsl(0, 0%, 0%);
+	--secondary: hsl(247 39% 18%);
+	--secondary-foreground: hsl(47.9 95.8% 53.1%);
+	--tertiary: hsl(60 4.8% 95.9%);
+	--tertiary-foreground: hsl(228 11% 47%);
+	--muted: hsl(60 4.8% 95.9%);
+	--muted-foreground: hsl(25 5.3% 44.7%);
+	--accent: hsl(247 39% 18%);
+	--accent-foreground: hsl(47.9 95.8% 53.1%);
+	--accent-secondary: hsl(60 4.8% 95.9%);
+	--accent-secondary-foreground: hsl(48 96% 53%);
+	--destructive: hsl(0 84.2% 60.2%);
+	--destructive-foreground: hsl(60 9.1% 97.8%);
+	--success: hsl(142 70.56% 45.29%);
+	--success-foreground: hsl(60 9.1% 97.8%);
+	--border: hsl(198.75 21.05% 14.9%);
+	--input: hsl(20 5.9% 90%);
+	--ring: hsl(20 14.3% 4.1%);
+	--purple-box: hsl(240, 21.63%, 51.96%);
+	--purple-table: hsl(246.67, 39.13%, 18.04%);
+	--radius: 0.5rem;
+
+	--chart-1: hsl(48 96% 53%);
+	--chart-2: hsl(240 22% 52%);
+	--chart-3: hsl(30 80% 55%); /* Orange */
+	--chart-4: hsl(280 65% 60%); /* Purple */
+	--chart-5: hsl(340 75% 55%); /* Deep Pink */
+	--chart-6: hsl(200 65% 45%); /* Muted Blue-Green */
+	--chart-7: hsl(15 80% 55%); /* Coral */
+	--chart-8: hsl(0 70% 55%); /* Red */
+	--chart-9: hsl(180 70% 50%); /* Turquoise */
+	--red-roulette: hsl(346 71% 54%);
+	--black-roulette: hsl(198.75 21.05% 14.9%);
+	--green-roulette: hsl(152.52 53.91% 47.65%);
+	--bonus: hsl(217.22 91.22% 59.8%);
+	/* Sidebar */
+	--sidebar-background: hsl(227.14 31.82% 8.63%);
+	--sidebar-foreground: hsl(240 4.8% 95.9%);
+	--sidebar-primary: hsl(224.3 76.3% 48%);
+	--sidebar-primary-foreground: hsl(0 0% 100%);
+	--sidebar-accent: hsl(240 3.7% 15.9%);
+	--sidebar-accent-foreground: hsl(240 4.8% 95.9%);
+	--sidebar-border: hsl(240 3.7% 15.9%);
+	--sidebar-ring: hsl(217.2 91.2% 59.8%);
+	--sidebar-item: hsl(0 0% 100%);
+	--sidebar-background-light: hsl(245.1 90% 80%);
 }
 
 @layer utilities {
@@ -199,11 +199,5 @@
 	/* Handle on hover */
 	::-webkit-scrollbar-thumb:hover {
 		background: #555;
-	}
-}
-@layer base {
-	body {
-		background-color: var(--background);
-		color: var(--foreground);
 	}
 }

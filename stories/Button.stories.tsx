@@ -113,4 +113,16 @@ export const FreeSize: Story = {
 	},
 };
 
+export const WithIcon: Story = {
+	args: {
+		className: 'gap-2',
+		children: (
+			<>
+				<PlayIcon className="w-3 h-3" />
+				Button
+			</>
+		),
+	},
+};
+
 export default meta;

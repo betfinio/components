@@ -1,8 +1,8 @@
 import type { Table as ReactTable } from '@tanstack/react-table';
 
 import { cn } from '@/lib/utils';
-import { motion } from 'framer-motion';
 import { ChevronLeft, ChevronRight, ChevronsLeft, ChevronsRight } from 'lucide-react';
+import { motion } from 'motion/react';
 import type React from 'react';
 import { Button } from './button.tsx';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './select';

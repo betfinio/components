@@ -100,7 +100,7 @@ export const Default: Story = {
 									<CollapsibleTrigger className="flex gap-2 p-2 h-10 w-full items-center">
 										<Roulette className="w-4 h-4" />
 										<span>Roulette</span>
-										<div className="flex flex-grow justify-end">
+										<div className="flex grow justify-end">
 											<ChevronDown className="w-4 h-4 bg-foreground/20 rounded-sm transition-transform group-data-[state=open]/collapsible:rotate-180" />
 										</div>
 									</CollapsibleTrigger>
@@ -133,7 +133,7 @@ export const Default: Story = {
 									<CollapsibleTrigger className="flex gap-2 p-2 h-10 w-full items-center">
 										<LuckyRound className="w-4 h-4" />
 										<span>Lucky Round</span>
-										<div className="flex flex-grow justify-end">
+										<div className="flex grow justify-end">
 											<ChevronDown className="w-4 h-4 bg-foreground/20 rounded-sm transition-transform group-data-[state=open]/collapsible:rotate-180" />
 										</div>
 									</CollapsibleTrigger>

@@ -44,7 +44,7 @@ const Slider = React.forwardRef<React.ElementRef<typeof SliderPrimitive.Root>, R
 				</SliderPrimitive.Track>
 				<SliderPrimitive.Thumb
 					className={cn(
-						'block h-3 w-3 cursor-pointer rounded-full border-2 border-primary bg-primary transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50',
+						'block h-3 w-3 cursor-pointer rounded-full border-2 border-primary bg-primary transition-colors focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50',
 						thumbClassName,
 					)}
 				/>

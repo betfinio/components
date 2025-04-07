@@ -64,7 +64,7 @@ export const IconGallery = () => {
 							const MyIcon = Icon[icon as keyof typeof Icon] as any;
 							return (
 								<IconItem key={icon} name={icon}>
-									<MyIcon className={' !w-7 !h-7'} />
+									<MyIcon className={' w-7! h-7!'} />
 								</IconItem>
 							);
 						})}

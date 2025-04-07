@@ -1,7 +1,7 @@
 import * as DialogPrimitive from '@radix-ui/react-dialog';
 
+import { cn } from '@/lib/utils';
 import type React from 'react';
-import { cn } from '../../lib/utils';
 
 const Dialog = DialogPrimitive.Root;
 
@@ -20,7 +20,6 @@ const DialogOverlay = ({ className, ...props }: React.ComponentPropsWithoutRef<t
 		{...props}
 	/>
 );
-DialogOverlay.displayName = DialogPrimitive.Overlay.displayName;
 
 const DialogContent = ({ className, children, ...props }: React.ComponentPropsWithoutRef<typeof DialogPrimitive.Content>) => (
 	<DialogPortal>
@@ -36,26 +35,20 @@ const DialogContent = ({ className, children, ...props }: React.ComponentPropsWi
 		</DialogPrimitive.Content>
 	</DialogPortal>
 );
-DialogContent.displayName = DialogPrimitive.Content.displayName;
 
 const DialogHeader = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => (
 	<div className={cn('flex flex-col space-y-1.5  sm:text-left', className)} {...props} />
 );
-DialogHeader.displayName = 'DialogHeader';
 
 const DialogFooter = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => (
 	<div className={cn('flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2', className)} {...props} />
 );
-DialogFooter.displayName = 'DialogFooter';
 
 const DialogTitle = ({ className, ...props }: React.ComponentPropsWithoutRef<typeof DialogPrimitive.Title>) => (
 	<DialogPrimitive.Title className={cn('font-semibold leading-none tracking-tight', className)} {...props} />
 );
-DialogTitle.displayName = DialogPrimitive.Title.displayName;
 
 const DialogDescription = ({ className, ...props }: React.ComponentPropsWithoutRef<typeof DialogPrimitive.Description>) => (
 	<DialogPrimitive.Description className={cn(className)} {...props} />
 );
-DialogDescription.displayName = DialogPrimitive.Description.displayName;
-
 export { Dialog, DialogPortal, DialogOverlay, DialogClose, DialogTrigger, DialogContent, DialogHeader, DialogFooter, DialogTitle, DialogDescription };

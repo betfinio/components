@@ -3,7 +3,7 @@ import { millify } from 'millify';
 import type { FC } from 'react';
 
 import { Bet } from '@/icons';
-import { cn } from '../../lib/utils';
+import { cn } from '@/lib/utils';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '../ui/tooltip';
 
 export interface BetValueProps {

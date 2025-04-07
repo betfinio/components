@@ -2,14 +2,13 @@ import type { DialogProps } from '@radix-ui/react-dialog';
 import { Command as CommandPrimitive } from 'cmdk';
 import { Search } from 'lucide-react';
 
+import { cn } from '@/lib/utils';
 import type React from 'react';
-import { cn } from '../../lib/utils';
 import { Dialog, DialogContent } from './dialog';
 
 const Command = ({ className, ...props }: React.ComponentPropsWithoutRef<typeof CommandPrimitive>) => (
 	<CommandPrimitive className={cn('flex h-full w-full flex-col md:min-w-[500px] overflow-hidden rounded-md bg-gray-800 text-white', className)} {...props} />
 );
-Command.displayName = CommandPrimitive.displayName;
 
 interface CommandDialogProps extends DialogProps {}
 
@@ -38,25 +37,17 @@ const CommandInput = ({ className, ...props }: React.ComponentPropsWithoutRef<ty
 	</div>
 );
 
-CommandInput.displayName = CommandPrimitive.Input.displayName;
-
 const CommandList = ({ className, ...props }: React.ComponentPropsWithoutRef<typeof CommandPrimitive.List>) => (
 	<CommandPrimitive.List className={cn('max-h-[300px] overflow-y-auto overflow-x-hidden', className)} {...props} />
 );
-
-CommandList.displayName = CommandPrimitive.List.displayName;
 
 const CommandEmpty = ({ ...props }: React.ComponentPropsWithoutRef<typeof CommandPrimitive.Empty>) => (
 	<CommandPrimitive.Empty className="py-6 text-center text-sm" {...props} />
 );
 
-CommandEmpty.displayName = CommandPrimitive.Empty.displayName;
-
 const CommandLoading = ({ ...props }: React.ComponentPropsWithoutRef<typeof CommandPrimitive.Empty>) => (
 	<CommandPrimitive.Loading className="py-6 text-center text-sm" {...props} />
 );
-
-CommandLoading.displayName = CommandPrimitive.Loading.displayName;
 
 const CommandGroup = ({ className, ...props }: React.ComponentPropsWithoutRef<typeof CommandPrimitive.Group>) => (
 	<CommandPrimitive.Group
@@ -68,12 +59,9 @@ const CommandGroup = ({ className, ...props }: React.ComponentPropsWithoutRef<ty
 	/>
 );
 
-CommandGroup.displayName = CommandPrimitive.Group.displayName;
-
 const CommandSeparator = ({ className, ...props }: React.ComponentPropsWithoutRef<typeof CommandPrimitive.Separator>) => (
 	<CommandPrimitive.Separator className={cn('-mx-1 h-px bg-secondaryLight', className)} {...props} />
 );
-CommandSeparator.displayName = CommandPrimitive.Separator.displayName;
 
 const CommandItem = ({ className, ...props }: React.ComponentPropsWithoutRef<typeof CommandPrimitive.Item>) => (
 	<CommandPrimitive.Item
@@ -85,11 +73,8 @@ const CommandItem = ({ className, ...props }: React.ComponentPropsWithoutRef<typ
 	/>
 );
 
-CommandItem.displayName = CommandPrimitive.Item.displayName;
-
 const CommandShortcut = ({ className, ...props }: React.HTMLAttributes<HTMLSpanElement>) => (
 	<span className={cn('ml-auto text-xs tracking-widest text-white', className)} {...props} />
 );
-CommandShortcut.displayName = 'CommandShortcut';
 
 export { Command, CommandDialog, CommandInput, CommandList, CommandEmpty, CommandGroup, CommandItem, CommandShortcut, CommandSeparator, CommandLoading };

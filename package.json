@@ -27,7 +27,6 @@
 			"types": "./dist/icons/index.d.ts",
 			"import": "./dist/icons/index.js"
 		},
-		"./tailwind-config": "./tailwind.config.js",
 		"./style.css": "./dist/components.css"
 	},
 	"module": "./dist/index.js",

@@ -1,6 +1,6 @@
 {
 	"name": "@betfinio/components",
-	"version": "2.0.0-dev.5",
+	"version": "2.0.0-dev.6",
 	"type": "module",
 	"exports": {
 		".": {
@@ -31,7 +31,9 @@
 	},
 	"module": "./dist/index.js",
 	"types": "./dist/index.d.ts",
-	"files": ["dist"],
+	"files": [
+		"dist"
+	],
 	"scripts": {
 		"dev": "vite build --watch",
 		"build": "tsc && vite build",

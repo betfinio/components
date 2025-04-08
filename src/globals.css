@@ -3,9 +3,7 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-@custom-variant dark (&:is(.dark *));
-
-@theme inline {
+@theme static inline {
 	--breakpoint-2xl: 1440px;
 
 	--color-border: var(--border);

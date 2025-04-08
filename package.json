@@ -27,8 +27,7 @@
 			"types": "./dist/icons/index.d.ts",
 			"import": "./dist/icons/index.js"
 		},
-		"./components.css": "./dist/components.css",
-		"./globals.css": "./src/globals.css"
+		"./globals.css": "./dist/components.css"
 	},
 	"module": "./dist/index.js",
 	"types": "./dist/index.d.ts",

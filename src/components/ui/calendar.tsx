@@ -3,7 +3,7 @@ import { DayPicker } from 'react-day-picker';
 
 import type { ComponentProps } from 'react';
 
-import { cn } from '../../lib/utils';
+import { cn } from '@/lib/utils';
 import { buttonVariants } from './button.tsx';
 
 export type CalendarProps = ComponentProps<typeof DayPicker>;
@@ -38,7 +38,7 @@ function Calendar({ className, classNames, showOutsideDays = true, ...props }: C
 				day_selected: 'bg-success text-success-foreground ',
 				day_today: 'bg-accent text-accent-foreground',
 				day_outside: 'day-outside aria-selected:bg-accent/50 aria-selected:text-muted-foreground',
-				day_disabled: 'text-muted-foreground !text-foreground/20',
+				day_disabled: 'text-muted-foreground text-foreground/20!',
 				day_range_middle: 'aria-selected:bg-accent aria-selected:text-accent-foreground',
 				day_hidden: 'invisible',
 				...classNames,
@@ -51,6 +51,5 @@ function Calendar({ className, classNames, showOutsideDays = true, ...props }: C
 		/>
 	);
 }
-Calendar.displayName = 'Calendar';
 
 export { Calendar };

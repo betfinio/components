@@ -77,7 +77,7 @@ export const Default: Story = {
 					<SidebarMenu className="gap-2">
 						<MockWidget />
 						<Button variant="outline" className="w-full rounded-lg border-primary gap-1">
-							<Bet className="w-4 h-4 text-primary" />
+							<Bet className="size-4 text-primary" />
 							Buy BET
 						</Button>
 						<SidebarMenuItem>
@@ -98,10 +98,10 @@ export const Default: Story = {
 							<SidebarGroup>
 								<SidebarGroupLabel>
 									<CollapsibleTrigger className="flex gap-2 p-2 h-10 w-full items-center">
-										<Roulette className="w-4 h-4" />
+										<Roulette className="size-4" />
 										<span>Roulette</span>
-										<div className="flex flex-grow justify-end">
-											<ChevronDown className="w-4 h-4 bg-foreground/20 rounded-sm transition-transform group-data-[state=open]/collapsible:rotate-180" />
+										<div className="flex grow justify-end">
+											<ChevronDown className="size-4 bg-foreground/20 rounded-sm transition-transform group-data-[state=open]/collapsible:rotate-180" />
 										</div>
 									</CollapsibleTrigger>
 								</SidebarGroupLabel>
@@ -131,10 +131,10 @@ export const Default: Story = {
 							<SidebarGroup>
 								<SidebarGroupLabel>
 									<CollapsibleTrigger className="flex gap-2 p-2 h-10 w-full items-center">
-										<LuckyRound className="w-4 h-4" />
+										<LuckyRound className="size-4" />
 										<span>Lucky Round</span>
-										<div className="flex flex-grow justify-end">
-											<ChevronDown className="w-4 h-4 bg-foreground/20 rounded-sm transition-transform group-data-[state=open]/collapsible:rotate-180" />
+										<div className="flex grow justify-end">
+											<ChevronDown className="size-4 bg-foreground/20 rounded-sm transition-transform group-data-[state=open]/collapsible:rotate-180" />
 										</div>
 									</CollapsibleTrigger>
 								</SidebarGroupLabel>
@@ -194,7 +194,7 @@ export const Default: Story = {
 						<Select value={language}>
 							<SelectTrigger className="w-full" minimized={minimized}>
 								<div className={'flex flex-row items-center justify-start gap-2'}>
-									<Globe className={cn('w-4 h-4')} />
+									<Globe className={cn('size-4')} />
 									<SelectValue placeholder={'Language'} />
 								</div>
 							</SelectTrigger>

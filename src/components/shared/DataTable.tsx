@@ -3,8 +3,8 @@ import { type ColumnDef, type TableMeta, flexRender, getCoreRowModel, getPaginat
 import { cva } from 'class-variance-authority';
 import { ArrowDownIcon, ArrowUpDownIcon, ArrowUpIcon, Loader } from 'lucide-react';
 
+import { cn, cn as cx } from '@/lib/utils';
 import React from 'react';
-import { cn, cn as cx } from '../../lib/utils';
 import { DataTablePagination, Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '../ui/table';
 
 interface PaginationState {
@@ -117,10 +117,10 @@ export function DataTable<TData, TValue>({
 										<div className="flex items-center gap-1">
 											{header.isPlaceholder ? null : flexRender(header.column.columnDef.header, header.getContext())}
 											{header.column.getCanSort() && (
-												<div className="w-4 h-4">
-													{header.column.getIsSorted() === 'asc' && <ArrowUpIcon className="w-4 h-4" />}
-													{header.column.getIsSorted() === 'desc' && <ArrowDownIcon className="w-4 h-4" />}
-													{header.column.getIsSorted() === false && <ArrowUpDownIcon className="w-4 h-4 opacity-50" />}
+												<div className="size-4">
+													{header.column.getIsSorted() === 'asc' && <ArrowUpIcon className="size-4" />}
+													{header.column.getIsSorted() === 'desc' && <ArrowDownIcon className="size-4" />}
+													{header.column.getIsSorted() === false && <ArrowUpDownIcon className="size-4 opacity-50" />}
 												</div>
 											)}
 										</div>

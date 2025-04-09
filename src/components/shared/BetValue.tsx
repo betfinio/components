@@ -1,5 +1,5 @@
 import { valueToNumber } from '@betfinio/abi';
-import NumberFlow from '@number-flow/react';
+import NumberFlow, { type Format } from '@number-flow/react';
 import { millify } from 'millify';
 import type { FC } from 'react';
 
@@ -36,13 +36,18 @@ export const BetValue: FC<BetValueProps> = ({
 }) => {
 	const amount: number = typeof value === 'bigint' ? valueToNumber(value) : value;
 	const number = withMillify ? millify(amount, { precision }) : amount.toLocaleString('en');
+	const format: Format = {
+		notation: withMillify ? 'compact' : 'standard',
+		compactDisplay: 'short',
+		roundingMode: 'ceil',
+	};
 	return (
 		<TooltipProvider delayDuration={300}>
 			<Tooltip>
 				<TooltipTrigger asChild>
 					<div className={cn(className, 'flex flex-row items-center cursor-pointer justify-start w-fit gap-1')}>
 						{withIcon && iconPosition === 'left' && <Bet className={cn('size-4 stroke-0 text-primary', iconClassName)} />}
-						{animated ? <NumberFlow value={amount} /> : number}
+						{animated ? <NumberFlow format={format} value={amount} /> : number}
 						{withIcon && iconPosition === 'right' && <Bet className={cn('size-4 stroke-0 text-primary', iconClassName)} />}
 					</div>
 				</TooltipTrigger>

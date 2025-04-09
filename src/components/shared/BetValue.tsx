@@ -5,7 +5,6 @@ import type { FC } from 'react';
 
 import { Bet } from '@/icons';
 import { cn } from '@/lib/utils';
-import { AnimatePresence } from 'motion/react';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '../ui/tooltip';
 
 export interface BetValueProps {

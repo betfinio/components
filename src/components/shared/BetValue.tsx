@@ -40,6 +40,7 @@ export const BetValue: FC<BetValueProps> = ({
 		notation: withMillify ? 'compact' : 'standard',
 		compactDisplay: 'short',
 		roundingMode: 'ceil',
+		minimumFractionDigits: precision,
 	};
 	return (
 		<TooltipProvider delayDuration={300}>

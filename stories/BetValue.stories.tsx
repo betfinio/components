@@ -1,5 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import React from 'react';
 import { BetValue } from '../src/components/shared';
+import { Button } from '../src/components/ui/button';
 
 const meta = {
 	title: 'BetValue',
@@ -50,6 +52,28 @@ export const TooltipPrefix: Story = {
 export const IconClassName: Story = {
 	args: {
 		iconClassName: 'text-destructive',
+	},
+};
+
+export const Animated: Story = {
+	args: {
+		animated: true,
+		value: 1_000_000,
+	},
+	render: (args) => {
+		const [value, setValue] = React.useState(args.value);
+
+		const randomizeValue = () => {
+			const newValue = Math.floor(Math.random() * 10_000_000);
+			setValue(newValue);
+		};
+
+		return (
+			<div className="flex flex-col gap-4 items-center">
+				<BetValue {...args} value={value} />
+				<Button onClick={randomizeValue}>Randomize Value</Button>
+			</div>
+		);
 	},
 };
 

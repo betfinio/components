@@ -1,6 +1,6 @@
 {
 	"name": "@betfinio/components",
-	"version": "2.0.2",
+	"version": "2.1.0-dev.4",
 	"type": "module",
 	"exports": {
 		".": {
@@ -88,6 +88,7 @@
 	},
 	"dependencies": {
 		"@betfinio/abi": "^2.4.2",
+		"@number-flow/react": "^0.5.9",
 		"@radix-ui/react-accordion": "^1.2.3",
 		"@radix-ui/react-alert-dialog": "^1.1.6",
 		"@radix-ui/react-checkbox": "^1.1.4",

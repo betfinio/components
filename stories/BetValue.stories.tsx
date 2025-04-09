@@ -57,7 +57,6 @@ export const IconClassName: Story = {
 
 export const Animated: Story = {
 	args: {
-		animated: true,
 		value: 1_000_000,
 	},
 	render: (args) => {

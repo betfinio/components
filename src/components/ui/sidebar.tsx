@@ -53,7 +53,8 @@ function SidebarProvider({
 	open?: boolean;
 	onOpenChange?: (open: boolean) => void;
 }) {
-	const { isMobile } = useMediaQuery();
+	const { isTablet, isMobile: isMobileLib } = useMediaQuery();
+	const isMobile = isTablet || isMobileLib;
 	const [openMobile, setOpenMobile] = React.useState(false);
 
 	// This is the internal state of the sidebar.

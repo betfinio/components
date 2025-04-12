@@ -1,4 +1,4 @@
-import { Loader, Loader2 } from 'lucide-react';
+import { Loader } from 'lucide-react';
 import { Toaster as Sonner, toast } from 'sonner';
 
 type ToasterProps = React.ComponentProps<typeof Sonner>;

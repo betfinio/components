@@ -53,7 +53,8 @@ function SidebarProvider({
 	open?: boolean;
 	onOpenChange?: (open: boolean) => void;
 }) {
-	const { isMobile } = useMediaQuery();
+	const { isTablet, isMobile: isMobileLib } = useMediaQuery();
+	const isMobile = isTablet || isMobileLib;
 	const [openMobile, setOpenMobile] = React.useState(false);
 
 	// This is the internal state of the sidebar.
@@ -183,7 +184,10 @@ const Sidebar = ({
 						<SheetTitle>Sidebar</SheetTitle>
 						<SheetDescription>Displays the mobile sidebar.</SheetDescription>
 					</SheetHeader>
-					<div className="flex h-full w-full flex-col">{children}</div>
+					<div className="flex h-full w-full flex-col relative overflow-hidden z-10">
+						<div className="w-80 h-[617px] top-1/2 -translate-y-[40%] bg-violet-900/70 rounded-full blur-[200px] absolute right-0 md:-right-56" />
+						{children}
+					</div>
 				</SheetContent>
 			</Sheet>
 		);
@@ -226,7 +230,7 @@ const Sidebar = ({
 					data-sidebar="sidebar"
 					className="flex h-full w-full flex-col relative overflow-hidden bg-linear-to-b from-background to-secondary group-data-[variant=floating]:rounded-lg group-data-[variant=floating]:border group-data-[variant=floating]:border-sidebar-border group-data-[variant=floating]:shadow-sm"
 				>
-					<div className="w-80 h-[617px] top-1/2 -translate-y-[40%] bg-sidebar-background-light/80 rounded-full blur-[200px] absolute -right-56" />
+					<div className="w-80 h-[617px] top-1/2 -translate-y-[40%] bg-violet-900/70 rounded-full blur-[200px] absolute right-0 md:-right-56" />
 					{children}
 				</div>
 			</div>

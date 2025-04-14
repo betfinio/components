@@ -13,12 +13,10 @@ const SonnerToaster = ({ ...props }: ToasterProps) => {
 			}}
 			toastOptions={{
 				unstyled: true,
-
 				classNames: {
 					toast:
-						'data-[sonner-toast]:w-[var(--width)] group toast  text-foreground bg-background-lighter border shadow-lg flex items-center rounded-lg px-4 py-2 gap-2',
+						'data-[sonner-toast]:w-[var(--width)] group toast  text-foreground bg-background-lighter border shadow-lg flex items-center rounded-lg px-4 py-4 gap-2',
 					description: 'group-[.toast]:text-muted-foreground',
-
 					cancelButton: 'group-[.toast]:bg-muted group-[.toast]:text-muted-foreground',
 					success: 'border-success [&_svg]:text-success',
 					error: 'border-destructive [&_svg]:text-destructive',

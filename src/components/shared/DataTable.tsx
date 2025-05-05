@@ -1,4 +1,4 @@
-import type { InitialTableState, OnChangeFn, Row, Table as TanstackTable } from '@tanstack/react-table';
+import type { InitialTableState, OnChangeFn, Row, TableOptions, Table as TanstackTable } from '@tanstack/react-table';
 import { type ColumnDef, type TableMeta, flexRender, getCoreRowModel, getPaginationRowModel, getSortedRowModel, useReactTable } from '@tanstack/react-table';
 import { cva } from 'class-variance-authority';
 import { ArrowDownIcon, ArrowUpDownIcon, ArrowUpIcon, Loader } from 'lucide-react';
@@ -12,7 +12,7 @@ interface PaginationState {
 	pageSize: number;
 }
 
-type BaseDataTableProps<TData, TValue> = {
+type BaseDataTableProps<TData, TValue> = Omit<TableOptions<TData>, 'getCoreRowModel'> & {
 	columns: ColumnDef<TData, TValue>[];
 	data: TData[];
 	isLoading?: boolean;
@@ -64,7 +64,9 @@ export function DataTable<TData, TValue>({
 	totalCount,
 	pagination: controlledPagination,
 	onPaginationChange: controlledOnPaginationChange,
+
 	t,
+	...tableProps
 }: DataTableProps<TData, TValue>) {
 	const [internalPagination, setInternalPagination] = React.useState<PaginationState>({
 		pageIndex: 0,
@@ -85,6 +87,7 @@ export function DataTable<TData, TValue>({
 	);
 
 	const table = useReactTable({
+		...tableProps,
 		data,
 		columns,
 		getCoreRowModel: getCoreRowModel(),

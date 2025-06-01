@@ -30,3 +30,4 @@ export * from './switch';
 export * from './slider';
 export * from './sidebar';
 export * from './alert-dialog';
+export * from './context-menu';

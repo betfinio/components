@@ -21,9 +21,13 @@ const DialogOverlay = ({ className, ...props }: React.ComponentPropsWithoutRef<t
 	/>
 );
 
-const DialogContent = ({ className, children, ...props }: React.ComponentPropsWithoutRef<typeof DialogPrimitive.Content>) => (
+interface IDialogContentProps extends React.ComponentPropsWithoutRef<typeof DialogPrimitive.Content> {
+	overlayProps?: React.ComponentPropsWithoutRef<typeof DialogPrimitive.Overlay>;
+}
+
+const DialogContent = ({ className, children, overlayProps, ...props }: IDialogContentProps) => (
 	<DialogPortal>
-		<DialogOverlay />
+		<DialogOverlay {...overlayProps} />
 		<DialogPrimitive.Content
 			className={cn(
 				'fixed left-[50%] top-[50%] w-fit z-50 grid translate-x-[-50%] translate-y-[-50%] gap-4 border border-border bg-background shadow-lg duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 rounded-md',

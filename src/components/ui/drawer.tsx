@@ -1,15 +1,15 @@
-import { cn } from '@/lib/utils';
 import { Drawer as DrawerPrimitive } from 'vaul';
+import { cn } from '@/lib/utils';
 
 const Drawer = ({ shouldScaleBackground = true, ...props }: React.ComponentProps<typeof DrawerPrimitive.Root>) => (
 	<DrawerPrimitive.Root shouldScaleBackground={shouldScaleBackground} {...props} />
 );
 
-const DrawerTrigger = DrawerPrimitive.Trigger;
+const DrawerTrigger: React.ComponentType<React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Trigger>> = DrawerPrimitive.Trigger;
 
-const DrawerPortal = DrawerPrimitive.Portal;
+const DrawerPortal: React.ComponentType<React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Portal>> = DrawerPrimitive.Portal;
 
-const DrawerClose = DrawerPrimitive.Close;
+const DrawerClose: React.ComponentType<React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Close>> = DrawerPrimitive.Close;
 
 const DrawerOverlay = ({ className, ...props }: React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Overlay>) => (
 	<DrawerPrimitive.Overlay className={cn('fixed inset-0 z-50 bg-black/80', className)} {...props} />

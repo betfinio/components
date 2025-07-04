@@ -1,10 +1,14 @@
 {
-	"$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
-	"organizeImports": {
-		"enabled": true
+	"$schema": "https://biomejs.dev/schemas/2.0.6/schema.json",
+	"assist": {
+		"actions": {
+			"source": {
+				"organizeImports": "on"
+			}
+		}
 	},
 	"files": {
-		"ignore": ["@mf-types/**", "**/*.gen.ts"]
+		"includes": ["**", "!**/@mf-types/**", "!**/*.gen.ts"]
 	},
 	"vcs": {
 		"enabled": true,
@@ -30,17 +34,30 @@
 				"noExplicitAny": "off"
 			},
 			"a11y": {
-				"noSvgWithoutTitle": "off",
 				"useKeyWithClickEvents": "off",
-				"useFocusableInteractive": "off",
-				"useSemanticElements": "off"
+				"noSvgWithoutTitle": "off",
+				"useKeyWithMouseEvents": "off",
+				"useMediaCaption": "off",
+				"noStaticElementInteractions": "off"
 			},
 			"correctness": {
 				"useExhaustiveDependencies": "off"
 			},
 			"recommended": true,
-			"security": {
-				"noDangerouslySetInnerHtml": "off"
+			"complexity": {
+				"noForEach": "off"
+			},
+			"style": {
+				"noParameterAssign": "error",
+				"useAsConstAssertion": "error",
+				"useDefaultParameterLast": "error",
+				"useEnumInitializers": "error",
+				"useSelfClosingElements": "error",
+				"useSingleVarDeclarator": "error",
+				"noUnusedTemplateLiteral": "error",
+				"useNumberNamespace": "error",
+				"noInferrableTypes": "error",
+				"noUselessElse": "error"
 			}
 		}
 	}

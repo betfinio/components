@@ -1,7 +1,6 @@
 import * as ScrollAreaPrimitive from '@radix-ui/react-scroll-area';
-
-import { cn } from '@/lib/utils';
 import type React from 'react';
+import { cn } from '@/lib/utils';
 
 type ScrollAreaProps = React.ComponentPropsWithoutRef<typeof ScrollAreaPrimitive.Root> & {
 	viewPortClassName?: string;

@@ -105,9 +105,9 @@ function Carousel({ orientation = 'horizontal', opts, setApi, plugins, className
 				canScrollNext,
 			}}
 		>
-			<div onKeyDownCapture={handleKeyDown} className={cn('relative', className)} role="region" aria-roledescription="carousel" data-slot="carousel" {...props}>
+			<section onKeyDownCapture={handleKeyDown} className={cn('relative', className)} data-slot="carousel" {...props}>
 				{children}
-			</div>
+			</section>
 		</CarouselContext.Provider>
 	);
 }

@@ -1,10 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
-
-import { Button } from '../src/components/ui';
-
 import { PlayIcon } from 'lucide-react';
 import React from 'react';
+import { Button } from '../src/components/ui';
 
 const variants = ['Default', 'Destructive', 'Outline', 'Ghost', 'Link', 'Secondary', 'Tertiary'];
 const sizes = ['lg', 'sm', 'icon', 'freeSize', 'default'];

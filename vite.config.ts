@@ -3,6 +3,7 @@ import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
 import tsConfigPaths from 'vite-tsconfig-paths';
+import { extractThemePlugin } from './src/plugins/theme';
 
 export default defineConfig({
 	plugins: [
@@ -13,6 +14,7 @@ export default defineConfig({
 			exclude: ['src/**/*.stories.tsx'],
 			outDir: 'dist',
 		}),
+		extractThemePlugin(),
 	],
 	build: {
 		lib: {
@@ -23,6 +25,7 @@ export default defineConfig({
 				'hooks/index': resolve(__dirname, 'src/hooks/index.ts'),
 				'lib/index': resolve(__dirname, 'src/lib/index.ts'),
 				'icons/index': resolve(__dirname, 'src/icons/index.ts'),
+				theme: resolve(__dirname, 'src/theme.ts'),
 			},
 			formats: ['es'],
 		},

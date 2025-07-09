@@ -1,8 +1,7 @@
 import { Slot } from '@radix-ui/react-slot';
 import { ChevronRight, MoreHorizontal } from 'lucide-react';
-
-import { cn } from '@/lib/utils';
 import type React from 'react';
+import { cn } from '@/lib/utils';
 
 const Breadcrumb = ({ ...props }) => <nav aria-label="breadcrumb" {...props} />;
 
@@ -21,6 +20,7 @@ const BreadcrumbLink = ({ asChild, className, ...props }: React.ComponentPropsWi
 };
 
 const BreadcrumbPage = ({ className, ...props }: React.ComponentPropsWithoutRef<'span'>) => (
+	// biome-ignore lint/a11y/useFocusableInteractive: todo
 	<span role="link" aria-disabled="true" aria-current="page" className={cn('font-normal text-foreground', className)} {...props} />
 );
 

@@ -1,10 +1,9 @@
+import type { PopoverContentProps, PopoverProps, PopoverTriggerProps } from '@radix-ui/react-popover';
 import type { TooltipContentProps, TooltipProps, TooltipTriggerProps } from '@radix-ui/react-tooltip';
 import * as TooltipPrimitive from '@radix-ui/react-tooltip';
-
+import type React from 'react';
 import { useMediaQuery } from '@/hooks/use-media';
 import { cn } from '@/lib/utils';
-import type { PopoverContentProps, PopoverProps, PopoverTriggerProps } from '@radix-ui/react-popover';
-import type React from 'react';
 import { Popover, PopoverContent, PopoverTrigger } from './popover';
 
 const TooltipProvider = TooltipPrimitive.Provider;

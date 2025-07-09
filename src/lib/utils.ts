@@ -8,8 +8,9 @@ import { extendTailwindMerge } from 'tailwind-merge';
 //sn: - stones
 //app: - app
 //pd: - predict
+//lc - legendary-club
 
-const knownPrefixes = ['rl', 'ui', 'lr', 'lt', 'sn', 'app', 'pd'];
+const knownPrefixes = ['rl', 'ui', 'lr', 'lt', 'sn', 'app', 'pd', 'lc'];
 const prefixRegex = new RegExp(`^-?(${knownPrefixes.join('|')}):(.*)`);
 const twMerge = extendTailwindMerge({
 	experimentalParseClassName({ className, parseClassName }) {

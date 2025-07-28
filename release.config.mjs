@@ -11,6 +11,7 @@ export default {
 		[
 			'@semantic-release/git',
 			{
+				// biome-ignore lint/suspicious/noTemplateCurlyInString: todo
 				message: 'chore(release): ${nextRelease.version} \n\n${nextRelease.notes}',
 			},
 		],

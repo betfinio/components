@@ -1,5 +1,5 @@
 {
-	"$schema": "https://biomejs.dev/schemas/2.0.6/schema.json",
+	"$schema": "https://biomejs.dev/schemas/2.1.2/schema.json",
 	"assist": {
 		"actions": {
 			"source": {
@@ -32,6 +32,9 @@
 			"suspicious": {
 				"noArrayIndexKey": "off",
 				"noExplicitAny": "off"
+			},
+			"performance": {
+				"noDynamicNamespaceImportAccess": "off"
 			},
 			"a11y": {
 				"useKeyWithClickEvents": "off",

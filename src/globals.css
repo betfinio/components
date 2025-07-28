@@ -1,100 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap") layer(base);
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
 
 @import "tailwindcss";
 @import "tw-animate-css";
+@import "./theme.css";
 
 @custom-variant dark (&:is(.dark *));
-
-@theme static inline {
-	--breakpoint-2xl: 1440px;
-
-	--color-border: var(--border);
-	--color-input: var(--input);
-	--color-ring: var(--ring);
-
-	--color-background: var(--background);
-	--color-background-light: var(--background-light);
-	--color-background-lighter: var(--background-lighter);
-	--color-background-foreground: var(--background-foreground);
-
-	--color-foreground: var(--foreground);
-
-	--color-primary: var(--primary);
-	--color-primary-foreground: var(--primary-foreground);
-
-	--color-secondary: var(--secondary);
-	--color-secondary-foreground: var(--secondary-foreground);
-
-	--color-purple-box: var(--purple-box);
-	--color-purple-table: var(--purple-table);
-
-	--color-destructive: var(--destructive);
-	--color-destructive-foreground: var(--destructive-foreground);
-
-	--color-muted: var(--muted);
-	--color-muted-foreground: var(--muted-foreground);
-
-	--color-accent: var(--accent);
-	--color-accent-foreground: var(--accent-foreground);
-
-	--color-accent-secondary: var(--accent-secondary);
-	--color-accent-secondary-foreground: var(--accent-secondary-foreground);
-
-	--color-popover: var(--popover);
-	--color-popover-foreground: var(--popover-foreground);
-
-	--color-card: var(--card);
-	--color-card-foreground: var(--card-foreground);
-
-	--color-card-secondary: var(--card-secondary);
-	--color-card-secondary-foreground: var(--card-secondary-foreground);
-
-	--color-tertiary: var(--tertiary);
-	--color-tertiary-foreground: var(--tertiary-foreground);
-
-	--color-success: var(--success);
-	--color-success-foreground: var(--success-foreground);
-
-	--color-bonus: var(--bonus);
-
-	--color-sidebar: var(--sidebar-background);
-	--color-sidebar-foreground: var(--sidebar-foreground);
-	--color-sidebar-primary: var(--sidebar-primary);
-	--color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-	--color-sidebar-accent: var(--sidebar-accent);
-	--color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-	--color-sidebar-border: var(--sidebar-border);
-	--color-sidebar-ring: var(--sidebar-ring);
-	--color-sidebar-item: var(--sidebar-item);
-	--color-sidebar-background-light: var(--sidebar-background-light);
-
-	--radius-lg: var(--radius);
-	--radius-md: calc(var(--radius) - 2px);
-	--radius-sm: calc(var(--radius) - 4px);
-
-	--font-sans: Quicksand, Manrope, sans-serif;
-
-	--animate-accordion-down: accordion-down 0.2s ease-out;
-	--animate-accordion-up: accordion-up 0.2s ease-out;
-
-	@keyframes accordion-down {
-		from {
-			height: 0;
-		}
-		to {
-			height: var(--radix-accordion-content-height);
-		}
-	}
-	@keyframes accordion-up {
-		from {
-			height: var(--radix-accordion-content-height);
-		}
-		to {
-			height: 0;
-		}
-	}
-}
 
 @layer base {
 	*,

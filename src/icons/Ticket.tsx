@@ -1,6 +1,6 @@
 import type { FC } from 'react';
-import type { IconProps } from '.';
 import { cn } from '../lib/utils';
+import type { IconProps } from '.';
 
 const Ticket: FC<IconProps> = ({ ...props }) => {
 	return (

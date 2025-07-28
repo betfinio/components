@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ChevronRightIcon } from 'lucide-react';
-import React from 'react';
+// biome-ignore lint/correctness/noUnusedImports: todo
+import * as React from 'react';
 import {
 	ContextMenu,
 	ContextMenuCheckboxItem,

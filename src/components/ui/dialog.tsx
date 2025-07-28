@@ -1,7 +1,6 @@
 import * as DialogPrimitive from '@radix-ui/react-dialog';
-
-import { cn } from '@/lib/utils';
 import type React from 'react';
+import { cn } from '@/lib/utils';
 
 const Dialog = DialogPrimitive.Root;
 
@@ -30,7 +29,7 @@ const DialogContent = ({ className, children, overlayProps, ...props }: IDialogC
 		<DialogOverlay {...overlayProps} />
 		<DialogPrimitive.Content
 			className={cn(
-				'fixed left-[50%] top-[50%] w-fit z-50 grid translate-x-[-50%] translate-y-[-50%] gap-4 border border-border bg-background shadow-lg duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 rounded-md',
+				'fixed left-[50%] top-[50%] w-fit z-50 grid translate-x-[-50%] p-2 md:p-3 lg:p-4 translate-y-[-50%] gap-4 border border-border bg-background shadow-lg duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 rounded-xl',
 				className,
 			)}
 			{...props}

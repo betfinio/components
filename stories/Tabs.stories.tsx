@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
-
+// biome-ignore lint/correctness/noUnusedImports: todo
 import React from 'react';
 import { Tabs, TabsList, TabsTrigger } from '../src/components/ui';
 

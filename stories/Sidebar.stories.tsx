@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { BookOpenIcon, ChevronDown, Globe, HeadphonesIcon, MessageCircleIcon } from 'lucide-react';
+// biome-ignore lint/correctness/noUnusedImports: todo
 import * as React from 'react';
 import { Button } from '../src/components/ui/button';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '../src/components/ui/collapsible';

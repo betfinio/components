@@ -1,7 +1,7 @@
 import type { InitialTableState, Row, SortingState, TableOptions, Table as TanstackTable } from '@tanstack/react-table';
 import { type ColumnDef, flexRender, getCoreRowModel, type TableMeta, useReactTable } from '@tanstack/react-table';
 import { ArrowDownIcon, ArrowUpIcon, Loader } from 'lucide-react';
-
+import React from 'react';
 import { cn as cx } from '@/lib/utils';
 import InfiniteScroll from '../ui/infinite-scroll';
 import { ScrollArea } from '../ui/scroll-area';

@@ -2,7 +2,7 @@ import type { InitialTableState, OnChangeFn, Row, TableOptions, Table as Tanstac
 import { type ColumnDef, flexRender, getCoreRowModel, getPaginationRowModel, getSortedRowModel, type TableMeta, useReactTable } from '@tanstack/react-table';
 import { cva } from 'class-variance-authority';
 import { ArrowDownIcon, ArrowUpDownIcon, ArrowUpIcon, Loader } from 'lucide-react';
-
+import React from 'react';
 import { cn, cn as cx } from '@/lib/utils';
 import { DataTablePagination, Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '../ui/table';
 

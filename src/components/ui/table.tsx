@@ -77,7 +77,7 @@ function DataTablePagination<TData>({ table, className = '', isLoading = false, 
 			className={cn('flex items-center justify-between py-2 mt-2', className)}
 		>
 			<div className="flex-1 text-xs text-muted-foreground">
-				{resultsCount} {t('results')}.
+				{resultsCount} {t('results', { count: resultsCount })}.
 			</div>
 			<div className="flex items-center space-x-1 lg:space-x-4">
 				<div className="flex items-center space-x-1">

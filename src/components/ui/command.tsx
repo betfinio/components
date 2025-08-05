@@ -1,4 +1,5 @@
 import type { DialogProps } from '@radix-ui/react-dialog';
+import { cva, type VariantProps } from 'class-variance-authority';
 import { Command as CommandPrimitive } from 'cmdk';
 import { Search } from 'lucide-react';
 import type React from 'react';
@@ -6,7 +7,7 @@ import { cn } from '@/lib/utils';
 import { Dialog, DialogContent } from './dialog';
 
 const Command = ({ className, ...props }: React.ComponentPropsWithoutRef<typeof CommandPrimitive>) => (
-	<CommandPrimitive className={cn('flex h-full w-full flex-col md:min-w-[500px] overflow-hidden rounded-md bg-gray-800 text-white', className)} {...props} />
+	<CommandPrimitive className={cn('flex h-full w-full flex-col  overflow-hidden rounded-md bg-gray-800 text-white', className)} {...props} />
 );
 
 interface CommandDialogProps extends DialogProps {}
@@ -48,32 +49,54 @@ const CommandLoading = ({ ...props }: React.ComponentPropsWithoutRef<typeof Comm
 	<CommandPrimitive.Loading className="py-6 text-center text-sm" {...props} />
 );
 
-const CommandGroup = ({ className, ...props }: React.ComponentPropsWithoutRef<typeof CommandPrimitive.Group>) => (
-	<CommandPrimitive.Group
-		className={cn(
-			'overflow-hidden p-1 text-gray-400 [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:py-1.5 [&_[cmdk-group-heading]]:text-xs [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group-heading]]:text-white',
-			className,
-		)}
-		{...props}
-	/>
+const commandGroupVariants = cva('', {
+	variants: {
+		variant: {
+			default:
+				'overflow-hidden p-1 text-gray-400 [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:py-1.5 [&_[cmdk-group-heading]]:text-xs [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group-heading]]:text-white',
+		},
+	},
+});
+
+interface CommandGroupProps extends React.ComponentPropsWithoutRef<typeof CommandPrimitive.Group>, VariantProps<typeof commandGroupVariants> {}
+
+const CommandGroup = ({ className, variant = 'default', ...props }: CommandGroupProps) => (
+	<CommandPrimitive.Group className={cn(commandGroupVariants({ variant }), className)} {...props} />
 );
 
 const CommandSeparator = ({ className, ...props }: React.ComponentPropsWithoutRef<typeof CommandPrimitive.Separator>) => (
 	<CommandPrimitive.Separator className={cn('-mx-1 h-px bg-secondaryLight', className)} {...props} />
 );
 
-const CommandItem = ({ className, ...props }: React.ComponentPropsWithoutRef<typeof CommandPrimitive.Item>) => (
-	<CommandPrimitive.Item
-		className={cn(
-			'relative flex cursor-pointer select-none items-center rounded-sm px-2 py-1.5 text-sm outline-hidden aria-selected:bg-background-lighter aria-selected:text-primary',
-			className,
-		)}
-		{...props}
-	/>
+const commandItemVariants = cva('', {
+	variants: {
+		variant: {
+			default:
+				'relative flex cursor-pointer select-none items-center rounded-sm px-2 py-1.5 text-sm outline-hidden aria-selected:bg-secondary aria-selected:text-accent-foreground',
+		},
+	},
+});
+interface CommandItemProps extends React.ComponentPropsWithoutRef<typeof CommandPrimitive.Item>, VariantProps<typeof commandItemVariants> {}
+
+const CommandItem = ({ className, variant = 'default', ...props }: CommandItemProps) => (
+	<CommandPrimitive.Item className={cn(commandItemVariants({ variant }), className)} {...props} />
 );
 
 const CommandShortcut = ({ className, ...props }: React.HTMLAttributes<HTMLSpanElement>) => (
 	<span className={cn('ml-auto text-xs tracking-widest text-white', className)} {...props} />
 );
 
-export { Command, CommandDialog, CommandInput, CommandList, CommandEmpty, CommandGroup, CommandItem, CommandShortcut, CommandSeparator, CommandLoading };
+export {
+	Command,
+	CommandDialog,
+	CommandInput,
+	CommandList,
+	CommandEmpty,
+	CommandGroup,
+	CommandItem,
+	CommandShortcut,
+	CommandSeparator,
+	CommandLoading,
+	commandGroupVariants,
+	commandItemVariants,
+};

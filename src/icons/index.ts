@@ -21,6 +21,7 @@ import Check from './Check';
 import ChevronDown from './ChevronDown';
 import ChevronRight from './ChevronRight';
 import Chip from './Chip';
+import CirculationDollar from './CirculationDollar';
 import CloseModal from './CloseModal';
 import Clubs from './Clubs';
 import CoinLarge from './CoinLarge';
@@ -115,6 +116,7 @@ export {
 	CoinStack,
 	Contact,
 	CzechFlag,
+	CirculationDollar,
 	Diamonds,
 	Discord,
 	Dyno,

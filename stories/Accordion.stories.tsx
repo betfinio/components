@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-
+// biome-ignore lint/correctness/noUnusedImports: react import
+import React from 'react';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '../src/components/ui/accordion';
 
 const meta = {

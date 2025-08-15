@@ -4,9 +4,9 @@ import { cn } from '../../lib/utils';
 
 export type { NumberFormatValues } from 'react-number-format/types';
 
-export interface NumericInputProps extends NumericFormatProps<any> {
+export interface NumericInputProps extends NumericFormatProps {
 	hasError?: boolean;
-	size?: 'sm' | 'md' | 'lg';
+	scale?: 'sm' | 'md' | 'lg';
 	unstyled?: boolean;
 }
 
@@ -19,7 +19,7 @@ export const NumericInput = forwardRef<HTMLInputElement, NumericInputProps>(func
 		maxLength = 15,
 		inputMode = 'numeric',
 		hasError = false,
-		size = 'md',
+		scale = 'md',
 		unstyled = false,
 		className,
 		...restProps
@@ -41,11 +41,11 @@ export const NumericInput = forwardRef<HTMLInputElement, NumericInputProps>(func
 				'duration-300 transition-colors',
 				// Focus states
 				'focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2',
-				// Size variants
+				// Scale variants
 				{
-					'px-2 py-1.5 text-xs h-8': size === 'sm',
-					'px-4 py-2 text-sm h-10': size === 'md',
-					'px-4 py-3 text-base lg:text-lg h-12': size === 'lg',
+					'px-2 py-1.5 text-xs h-8': scale === 'sm',
+					'px-4 py-2 text-sm h-10': scale === 'md',
+					'px-4 py-3 text-base lg:text-lg h-12': scale === 'lg',
 				},
 				// Error state
 				hasError && 'text-destructive border-destructive',

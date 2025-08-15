@@ -38,10 +38,10 @@ const meta = {
 			control: { type: 'boolean' },
 			description: 'Whether to show error state styling',
 		},
-		size: {
+		scale: {
 			control: { type: 'select' },
 			options: ['sm', 'md', 'lg'],
-			description: 'Size variant of the input',
+			description: 'Scale variant of the input',
 		},
 		unstyled: {
 			control: { type: 'boolean' },
@@ -122,27 +122,27 @@ export const WithSuffix: Story = {
 	},
 };
 
-export const Sizes: Story = {
+export const Scales: Story = {
 	render: () => {
 		return (
 			<div className="space-y-4 w-[300px]">
 				<div>
 					<label htmlFor="small-input" className="text-sm font-medium leading-none mb-2 block">
-						Small Size
+						Small Scale
 					</label>
-					<NumericInput id="small-input" size="sm" placeholder="Small input..." />
+					<NumericInput id="small-input" scale="sm" placeholder="Small input..." />
 				</div>
 				<div>
 					<label htmlFor="medium-input" className="text-sm font-medium leading-none mb-2 block">
-						Medium Size (Default)
+						Medium Scale (Default)
 					</label>
-					<NumericInput id="medium-input" size="md" placeholder="Medium input..." />
+					<NumericInput id="medium-input" scale="md" placeholder="Medium input..." />
 				</div>
 				<div>
 					<label htmlFor="large-input" className="text-sm font-medium leading-none mb-2 block">
-						Large Size
+						Large Scale
 					</label>
-					<NumericInput id="large-input" size="lg" placeholder="Large input..." />
+					<NumericInput id="large-input" scale="lg" placeholder="Large input..." />
 				</div>
 			</div>
 		);

@@ -1,9 +1,14 @@
 import { forwardRef } from 'react';
 import { NumericFormat, type NumericFormatProps } from 'react-number-format';
+import { cn } from '../../lib/utils';
 
 export type { NumberFormatValues } from 'react-number-format/types';
 
-export type NumericInputProps = NumericFormatProps<any>;
+export interface NumericInputProps extends NumericFormatProps<any> {
+	hasError?: boolean;
+	size?: 'sm' | 'md' | 'lg';
+	unstyled?: boolean;
+}
 
 export const NumericInput = forwardRef<HTMLInputElement, NumericInputProps>(function NumericInput(props, ref) {
 	const {
@@ -13,10 +18,38 @@ export const NumericInput = forwardRef<HTMLInputElement, NumericInputProps>(func
 		min = 1,
 		maxLength = 15,
 		inputMode = 'numeric',
-		balance = 0n,
-		disabled,
+		hasError = false,
+		size = 'md',
+		unstyled = false,
+		className,
 		...restProps
 	} = props;
+
+	// Base styles that are commonly used across the app
+	const baseStyles = unstyled
+		? ''
+		: cn(
+				// Layout and sizing
+				'w-full text-center',
+				// Background and borders
+				'bg-background border border-border rounded-lg',
+				// Typography
+				'font-semibold text-foreground',
+				// States
+				'disabled:cursor-not-allowed disabled:opacity-50',
+				// Transitions
+				'duration-300 transition-colors',
+				// Focus states
+				'focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2',
+				// Size variants
+				{
+					'px-2 py-1.5 text-xs h-8': size === 'sm',
+					'px-4 py-2 text-sm h-10': size === 'md',
+					'px-4 py-3 text-base lg:text-lg h-12': size === 'lg',
+				},
+				// Error state
+				hasError && 'text-destructive border-destructive',
+			);
 
 	return (
 		<NumericFormat
@@ -26,7 +59,7 @@ export const NumericInput = forwardRef<HTMLInputElement, NumericInputProps>(func
 			min={min}
 			maxLength={maxLength}
 			inputMode={inputMode}
-			disabled={disabled || balance <= 0}
+			className={cn(baseStyles, className)}
 			getInputRef={ref}
 			{...restProps}
 		/>

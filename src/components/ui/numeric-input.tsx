@@ -30,7 +30,7 @@ export const NumericInput = forwardRef<HTMLInputElement, NumericInputProps>(func
 		? ''
 		: cn(
 				// Layout and sizing
-				'w-full text-center',
+				'w-full text-center text-base',
 				// Background and borders
 				'bg-background border border-border rounded-lg',
 				// Typography
@@ -43,9 +43,9 @@ export const NumericInput = forwardRef<HTMLInputElement, NumericInputProps>(func
 				'focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2',
 				// Scale variants
 				{
-					'px-2 py-1.5 text-xs h-8': scale === 'sm',
-					'px-4 py-2 text-sm h-10': scale === 'md',
-					'px-4 py-3 text-base lg:text-lg h-12': scale === 'lg',
+					'px-2 py-1.5 h-8': scale === 'sm',
+					'px-4 py-2 h-10': scale === 'md',
+					'px-4 py-3 lg:text-lg h-12': scale === 'lg',
 				},
 				// Error state
 				hasError && 'text-destructive border-destructive',

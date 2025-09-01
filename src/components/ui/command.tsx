@@ -7,7 +7,7 @@ import { cn } from '@/lib/utils';
 import { Dialog, DialogContent } from './dialog';
 
 const Command = ({ className, ...props }: React.ComponentPropsWithoutRef<typeof CommandPrimitive>) => (
-	<CommandPrimitive className={cn('flex h-full w-full flex-col  overflow-hidden rounded-md bg-gray-800 text-white', className)} {...props} />
+	<CommandPrimitive className={cn('flex h-full w-full flex-col  overflow-hidden rounded-lg', className)} {...props} />
 );
 
 interface CommandDialogProps extends DialogProps {}
@@ -25,7 +25,7 @@ const CommandDialog = ({ children, ...props }: CommandDialogProps) => {
 };
 
 const CommandInput = ({ className, ...props }: React.ComponentPropsWithoutRef<typeof CommandPrimitive.Input>) => (
-	<div className="flex items-center border-b border-gray-900 px-3" cmdk-input-wrapper="">
+	<div className="flex items-center border-b border-gray-900 px-3 bg-card" cmdk-input-wrapper="">
 		<Search className="mr-2 h-4 w-4 shrink-0 opacity-50" />
 		<CommandPrimitive.Input
 			className={cn(
@@ -37,8 +37,18 @@ const CommandInput = ({ className, ...props }: React.ComponentPropsWithoutRef<ty
 	</div>
 );
 
-const CommandList = ({ className, ...props }: React.ComponentPropsWithoutRef<typeof CommandPrimitive.List>) => (
-	<CommandPrimitive.List className={cn('max-h-[300px] overflow-y-auto overflow-x-hidden', className)} {...props} />
+const commandListVariants = cva('', {
+	variants: {
+		variant: {
+			default: 'max-h-[300px] overflow-y-auto overflow-x-hidden bg-background ',
+		},
+	},
+});
+
+interface CommandListProps extends React.ComponentPropsWithoutRef<typeof CommandPrimitive.List>, VariantProps<typeof commandListVariants> {}
+
+const CommandList = ({ className, variant = 'default', ...props }: CommandListProps) => (
+	<CommandPrimitive.List className={cn(commandListVariants({ variant }), className)} {...props} />
 );
 
 const CommandEmpty = ({ ...props }: React.ComponentPropsWithoutRef<typeof CommandPrimitive.Empty>) => (
@@ -99,4 +109,5 @@ export {
 	CommandLoading,
 	commandGroupVariants,
 	commandItemVariants,
+	commandListVariants,
 };

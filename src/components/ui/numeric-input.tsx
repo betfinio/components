@@ -48,7 +48,7 @@ export const NumericInput = forwardRef<HTMLInputElement, NumericInputProps>(func
 					'px-4 py-3 lg:text-lg h-12': scale === 'lg',
 				},
 				// Error state
-				hasError && 'text-destructive border-destructive',
+				hasError && '!text-destructive !border-destructive',
 			);
 
 	return (

@@ -1,6 +1,6 @@
 {
 	"name": "@betfinio/components",
-	"version": "2.7.1-dev.2",
+	"version": "2.7.1",
 	"type": "module",
 	"exports": {
 		".": {

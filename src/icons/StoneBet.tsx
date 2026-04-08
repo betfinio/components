@@ -1,10 +1,21 @@
 import type { FC } from 'react';
 
 import type { IconProps } from './';
+import { getMirrorCoins } from './iconConfig';
 
 export const Stones: FC<IconProps> = ({ className = 'text-yellow-400', onClick }) => {
+	const mirrorCoins = getMirrorCoins();
 	return (
-		<svg width="16" height="16" className={className} onClick={onClick} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+		<svg
+			width="16"
+			height="16"
+			className={className}
+			onClick={onClick}
+			viewBox="0 0 16 16"
+			fill="none"
+			xmlns="http://www.w3.org/2000/svg"
+			style={mirrorCoins ? { transform: 'scaleX(-1)' } : undefined}
+		>
 			<path
 				fillRule="evenodd"
 				clipRule="evenodd"

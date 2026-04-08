@@ -1,8 +1,10 @@
 import type { FC } from 'react';
 import { cn } from '../lib/utils';
 import type { IconProps } from '.';
+import { getMirrorCoins } from './iconConfig';
 
 const Ticket: FC<IconProps> = ({ ...props }) => {
+	const mirrorCoins = getMirrorCoins();
 	return (
 		<svg
 			width="50"
@@ -12,6 +14,7 @@ const Ticket: FC<IconProps> = ({ ...props }) => {
 			xmlns="http://www.w3.org/2000/svg"
 			className={cn('text-primary', props.className)}
 			role="presentation"
+			style={mirrorCoins ? { transform: 'scaleX(-1)' } : undefined}
 			{...props}
 		>
 			<g clipPath="url(#clip0_1965_30543)">

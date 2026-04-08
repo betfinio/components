@@ -1,10 +1,20 @@
 import type { FC } from 'react';
 
 import type { IconProps } from './';
+import { getMirrorCoins } from './iconConfig';
 
 const Bet: FC<IconProps> = ({ className = 'text-[#FFC800]', color = '' }) => {
+	const mirrorCoins = getMirrorCoins();
 	return (
-		<svg xmlns="http://www.w3.org/2000/svg" className={className} width="12" height="12" viewBox="0 0 12 12" fill="none">
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			className={className}
+			width="12"
+			height="12"
+			viewBox="0 0 12 12"
+			fill="none"
+			style={mirrorCoins ? { transform: 'scaleX(-1)' } : undefined}
+		>
 			<circle
 				cx="6"
 				cy="6"

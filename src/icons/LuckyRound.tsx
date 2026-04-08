@@ -5,7 +5,7 @@ import { getMirrorCoins } from './iconConfig';
 
 const LuckyRound: FC<IconProps> = ({ className }) => {
 	const mirrorCoins = getMirrorCoins();
-	return image.pngimage.png(
+	return (
 		<svg
 			width="24"
 			height="24"
@@ -42,7 +42,7 @@ const LuckyRound: FC<IconProps> = ({ className }) => {
 					<rect width="24" height="24" fill="white" />
 				</clipPath>
 			</defs>
-		</svg>,
+		</svg>
 	);
 };
 

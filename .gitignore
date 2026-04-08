@@ -17,3 +17,5 @@ bun.lockb
 deno/
 
 .npmrc
+
+storybook-static/

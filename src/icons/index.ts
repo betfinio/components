@@ -4,6 +4,8 @@ export interface IconProps {
 	color?: string;
 }
 
+export { getMirrorCoins, setMirrorCoins } from './iconConfig';
+
 import Affiliate from './Affiliate';
 import Bag from './Bag';
 import Bank from './Bank';

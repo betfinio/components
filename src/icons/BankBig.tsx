@@ -1,10 +1,20 @@
 import type { FC } from 'react';
 
 import type { IconProps } from './';
+import { getMirrorCoins } from './iconConfig';
 
 const BankBig: FC<IconProps> = ({ className = '' }) => {
+	const mirrorCoins = getMirrorCoins();
 	return (
-		<svg width="50" height="40" viewBox="0 0 50 40" className={className} fill="none" xmlns="http://www.w3.org/2000/svg">
+		<svg
+			width="50"
+			height="40"
+			viewBox="0 0 50 40"
+			className={className}
+			fill="none"
+			xmlns="http://www.w3.org/2000/svg"
+			style={mirrorCoins ? { transform: 'scaleX(-1)' } : undefined}
+		>
 			<path
 				d="M12.0198 34.8821L8.39478 34.8821L8.39478 37.2069C8.4061 38.1244 8.68931 38.7475 9.25571 39.11C9.68618 39.3705 9.76548 39.3819 12.0198 39.3819C14.1495 39.3819 14.376 39.3592 14.7385 39.1553C15.3049 38.8268 15.6448 38.1018 15.6448 37.2069L15.6448 34.8821L12.0198 34.8821Z"
 				fill="white"

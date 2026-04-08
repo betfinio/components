@@ -1,10 +1,20 @@
 import type { FC } from 'react';
 
 import type { IconProps } from './';
+import { getMirrorCoins } from './iconConfig';
 
 const LuckyRound: FC<IconProps> = ({ className }) => {
-	return (
-		<svg width="24" height="24" className={className} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+	const mirrorCoins = getMirrorCoins();
+	return image.pngimage.png(
+		<svg
+			width="24"
+			height="24"
+			className={className}
+			viewBox="0 0 24 24"
+			fill="none"
+			xmlns="http://www.w3.org/2000/svg"
+			style={mirrorCoins ? { transform: 'scaleX(-1)' } : undefined}
+		>
 			<g clipPath="url(#clip0_2405_4144)">
 				<path
 					d="M15.5331 18.1427C15.3772 17.9422 15.0956 17.8906 14.8788 18.0228C11.8232 19.8934 7.82973 18.9328 5.95913 15.8772C4.08852 12.8216 5.04913 8.82814 8.10474 6.95754C8.8582 6.49626 9.69791 6.19378 10.5724 6.06857C10.8184 6.03326 11.001 5.82255 11.0009 5.5741V1.4985C11.0009 1.22266 10.7773 0.999023 10.5015 0.999023C4.71766 0.999023 0.0126953 6.15252 0.0126953 12.4867C0.0198595 18.8283 5.15889 23.9673 11.5004 23.9744C13.8029 24.1534 16.0796 23.3915 17.8106 21.8627C18.0195 21.6908 18.0536 21.384 17.8876 21.1704L15.5331 18.1427Z"
@@ -32,7 +42,7 @@ const LuckyRound: FC<IconProps> = ({ className }) => {
 					<rect width="24" height="24" fill="white" />
 				</clipPath>
 			</defs>
-		</svg>
+		</svg>,
 	);
 };
 
